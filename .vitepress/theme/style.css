@@ -38,3 +38,39 @@
 html {
   overflow-y: scroll;
 }
+
+/* 最初の見出しには、虹色50%・デフォルト文字色50%のグラデーションを入れたものを200%にしたものを横に移動させるアニメーションを起動時に一度実行する。 */
+.vp-doc h1:first-child {
+  --rainbow-1: #db6e86;
+  --rainbow-2: #fee55f;
+  --rainbow-3: #95d98a;
+  --rainbow-4: #00d1cf;
+  --rainbow-5: #a0b3f2;
+  --rainbow-6: #ff9fca;
+
+  background: linear-gradient(90deg, var(--vp-c-text-1) 33.3%, var(--rainbow-1) 38.1%, var(--rainbow-2) 42.9%, var(--rainbow-3) 47.6%, var(--rainbow-4) 52.4%, var(--rainbow-5) 57.1%, var(--rainbow-6) 61.9%, var(--vp-c-bg) 66.7%);
+  background-size: 300%;
+  background-position: 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow-text 0.75s cubic-bezier(0.55, 0.09, 0.68, 0.53) forwards;
+}
+
+html.dark .vp-doc h1:first-child {
+  --rainbow-1: #f9b5af;
+  --rainbow-2: #f9f2cf;
+  --rainbow-3: #adf0b6;
+  --rainbow-4: #a0d8e6;
+  --rainbow-5: #bab3ec;
+  --rainbow-6: #ffd0f3;
+}
+
+@keyframes rainbow-text {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
