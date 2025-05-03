@@ -14,8 +14,8 @@
         </div>
         <div class="max-w-screen-sm mx-auto">
             <h2 class="text-2xl font-bold mb-4">経歴</h2>
-            <ul class="list-revert ml-6">
-                <li v-for="(item, index) in career" :key="index" class="mb-4">
+            <ul class="list-revert ml-6 space-y-4">
+                <li v-for="(item, index) in career" :key="index">
                     <p class="text-lg font-bold">{{ item.title }}</p>
                     <div class="flex flex-col sm:flex-row gap-y-1 gap-x-2">
                         <div class="flex items-center gap-x-2">
@@ -27,6 +27,17 @@
                         <div class="text-sm text-gray-500">/ {{ item.position }}</div>
                     </div>
                 </li>
+            </ul>
+        </div>
+        <div class="max-w-screen-sm mx-auto">
+            <h2 class="text-2xl font-bold mb-4">SNS・連絡手段</h2>
+            <ul class="list-revert ml-6 space-y-2">
+                <li><a href="https://twitter.com/kakkokari_gtyih" target="_blank" class="text-brand-1 hover:text-brand-2 underline underline-offset-2 transition-colors font-500">X (Twitter)</a></li>
+                <li><a href="https://misskey.io/@kakkokari_gtyih" target="_blank" class="text-brand-1 hover:text-brand-2 underline underline-offset-2 transition-colors font-500">Misskey.io</a></li>
+                <li><a href="https://misskey.flowers/@kakkokari_test1" target="_blank" class="text-brand-1 hover:text-brand-2 underline underline-offset-2 transition-colors font-500">はなみすきー</a></li>
+                <li><a href="https://zenn.dev/kakkokari_gtyih" target="_blank" class="text-brand-1 hover:text-brand-2 underline underline-offset-2 transition-colors font-500">Zenn</a></li>
+                <li><a href="https://github.com/kakkokari-gtyih" target="_blank" class="text-brand-1 hover:text-brand-2 underline underline-offset-2 transition-colors font-500">GitHub</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSerbQkdTWvmxHTBlzMcohw0BgsyATniR4ZIO-ve00xUZSkUFA/viewform" target="_blank" class="text-brand-1 hover:text-brand-2 underline underline-offset-2 transition-colors font-500">お問い合わせフォーム</a></li>
             </ul>
         </div>
     </div>
