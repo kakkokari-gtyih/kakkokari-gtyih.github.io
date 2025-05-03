@@ -1,0 +1,40 @@
+/* .vitepress/theme/custom.css */
+@font-face {
+  font-family: 'Inter___local';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: local('Inter');
+}
+
+@font-face {
+  font-family: 'Inter___local';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: local('Inter');
+}
+
+@font-face {
+  font-family: 'Biz UDGothic___local';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('BIZ UDGothic');
+}
+
+@font-face {
+  font-family: 'Biz UDGothic___local';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('BIZ UDGothic Bold'), local('BIZ UDGothic');
+}
+
+:root {
+  --vp-font-family-base: 'Inter___local', 'Inter', 'Biz UDGothic___local', "BIZ UDGothic", Roboto, HelveticaNeue, Arial, sans-serif;
+}
+
+html {
+  overflow-y: scroll;
+}
