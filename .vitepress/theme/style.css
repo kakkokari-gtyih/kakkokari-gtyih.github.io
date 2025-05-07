@@ -54,7 +54,7 @@ html {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: rainbow-text 0.75s cubic-bezier(0.55, 0.09, 0.68, 0.53) forwards;
+  animation: 0.75s cubic-bezier(0.55, 0.09, 0.68, 0.53) 0.25s forwards rainbow-text;
 }
 
 html.dark .vp-doc h1:first-child {
