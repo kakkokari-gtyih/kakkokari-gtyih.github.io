@@ -22,9 +22,9 @@
                             <div v-if="item.to == null" class="h-5 leading-5 px-2 bg-brand-3 text-white rounded-full font-bold text-xs">
                                 現在
                             </div>
-                            <div class="text-sm text-gray-500">{{ item.from }} - {{ item.to }}</div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400">{{ item.from }} - {{ item.to }}</div>
                         </div>
-                        <div class="text-sm text-gray-500">/ {{ item.position }}</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400">/ {{ item.position }}</div>
                     </div>
                 </li>
             </ul>
@@ -61,6 +61,10 @@ const career = [{
     position: '開発協力',
 }, {
     from: '2023年10月',
+    title: 'AiScript Project',
+    position: 'ドキュメンテーションサイト・VSCode拡張の作成',
+}, {
+    from: '2023年9月',
     title: 'Misskey Project',
     position: 'コアメンバー',
 }, {
