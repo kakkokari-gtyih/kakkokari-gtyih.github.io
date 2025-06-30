@@ -24,7 +24,7 @@
                             </div>
                             <div class="text-sm text-gray-500 dark:text-gray-400">{{ item.from }} - {{ item.to }}</div>
                         </div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400">/ {{ item.position }}</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400"><span class="hidden sm:inline">/ </span>{{ item.position }}</div>
                     </div>
                 </li>
             </ul>
