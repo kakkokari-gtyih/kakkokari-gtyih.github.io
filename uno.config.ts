@@ -7,6 +7,7 @@ export default defineConfig({
     ],
     theme: {
         colors: {
+            bg: 'var(--vp-c-bg)',
             brand: {
                 1: 'var(--vp-c-brand-1)',
                 2: 'var(--vp-c-brand-2)',

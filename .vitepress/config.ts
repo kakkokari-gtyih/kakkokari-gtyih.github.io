@@ -13,6 +13,7 @@ export default defineConfig({
     ],
   },
   head: [
+    ['meta', { name: 'robots', content: 'noindex' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     ['link', { href: 'https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap', rel: 'stylesheet' }],
@@ -23,16 +24,7 @@ export default defineConfig({
       { text: 'トップ', link: '/' },
       { text: 'つくったもの', link: '/works' },
       { text: 'ブログ', link: '/blog' },
-    ],
-
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
+      { text: 'お問い合わせ', link: 'https://docs.google.com/forms/d/e/1FAIpQLSerbQkdTWvmxHTBlzMcohw0BgsyATniR4ZIO-ve00xUZSkUFA/viewform' },
     ],
 
     socialLinks: [
