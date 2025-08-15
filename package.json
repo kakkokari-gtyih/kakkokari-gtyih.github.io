@@ -11,12 +11,17 @@
     "docs:preview": "vitepress preview"
   },
   "devDependencies": {
-    "typescript": "^5.8.3",
-    "unocss": "66.1.0-beta.13",
-    "vitepress": "^1.6.3",
-    "vue-tsc": "^2.2.10"
+    "typescript": "^5.9.2",
+    "unocss": "66.4.2",
+    "vitepress": "^1.6.4",
+    "vue-tsc": "^3.0.5"
   },
   "dependencies": {
-    "vue": "^3.5.13"
+    "vue": "^3.5.18"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }
