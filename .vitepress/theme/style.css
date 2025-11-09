@@ -74,3 +74,23 @@ html.dark .vp-doc h1:first-child {
     background-position: 0%;
   }
 }
+
+.vp-doc img {
+  width: 100%;
+  height: auto;
+}
+
+.vp-doc .footnote-ref {
+  font-size: 0.65em;
+}
+
+.vp-doc .footnotes {
+  font-size: 0.875em;
+}
+
+.vp-doc img + em {
+  font-size: 0.875em;
+  display: block;
+  text-align: center;
+  color: var(--vp-c-text-2);
+}

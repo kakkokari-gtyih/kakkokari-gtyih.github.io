@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress';
+import footnote from 'markdown-it-footnote';
 import unoCss from 'unocss/vite';
 
 // https://vitepress.dev/reference/site-config
@@ -11,6 +12,11 @@ export default defineConfig({
     plugins: [
       unoCss(),
     ],
+  },
+  markdown: {
+    config(md) {
+      md.use(footnote);
+    },
   },
   head: [
     ['meta', { name: 'robots', content: 'noindex' }],
@@ -46,5 +52,5 @@ export default defineConfig({
     darkModeSwitchTitle: 'ダークモードに切り替え',
     sidebarMenuLabel: 'メニュー',
     returnToTopLabel: 'ページの先頭に戻る',
-  }
-})
+  },
+});
