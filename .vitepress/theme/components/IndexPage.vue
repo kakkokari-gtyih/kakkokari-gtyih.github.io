@@ -89,7 +89,7 @@
                     英語
                     <ul class="list-revert mt-1 mb-4 ml-6 space-y-1">
                         <li>実用英語技能検定 準1級</li>
-                        <li>TOEIC Listening & Reading IPテスト（オンライン） 935点</li>
+                        <li>TOEIC Listening & Reading IPテスト（オンライン） 950点</li>
                     </ul>
                 </li>
             </ul>
