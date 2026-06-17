@@ -28,8 +28,8 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'トップ', link: '/' },
-      { text: 'つくったもの', link: '/works' },
-      { text: 'ブログ', link: '/blog' },
+      { text: 'つくったもの', link: '/works', activeMatch: '/works/' },
+      { text: 'ブログ', link: '/blog', activeMatch: '/blog/' },
       { text: 'お問い合わせ', link: 'https://docs.google.com/forms/d/e/1FAIpQLSerbQkdTWvmxHTBlzMcohw0BgsyATniR4ZIO-ve00xUZSkUFA/viewform' },
     ],
 

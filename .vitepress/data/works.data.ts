@@ -1,7 +1,7 @@
 import { createContentLoader } from 'vitepress';
 import type { HeadConfig } from 'vitepress';
 
-interface Post {
+export interface Post {
     title: string
     url: string
     thumbnail: string | null
@@ -11,8 +11,8 @@ interface Post {
     }
 }
 
-declare const data: Post[]
-export { data }
+declare const data: Post[];
+export { data };
 
 export default createContentLoader('works/*.md', {
     // excerpt: true,

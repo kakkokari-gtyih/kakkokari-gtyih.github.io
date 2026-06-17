@@ -78,6 +78,7 @@ html.dark .vp-doc h1:first-child {
 .vp-doc img {
   width: 100%;
   height: auto;
+  border-radius: 0.75rem;
 }
 
 .vp-doc .footnote-ref {
