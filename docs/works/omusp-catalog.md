@@ -11,7 +11,11 @@ import WorksCta from '../../.vitepress/theme/components/WorksCta.vue';
 
 ![大阪公立大学授業カタログ](/img/works/o_catalog.webp)
 
-<WorksCta url="https://catalog.sp.omu.ac.jp/" />
+::: danger お知らせ
+只今大阪公立大学の情報基盤システムにおいて大規模な障害が発生しており、こちらのシステムは**機能を制限した臨時版**として提供しています。
+:::
+
+<WorksCta url="https://catalog.omu.moe/" />
 
 大阪公立大学で開講されている授業を閲覧できるサービス「大阪公立大学 授業カタログ」の全面リニューアルにあたり、UI部分を担当しました。
 
@@ -39,5 +43,5 @@ import WorksCta from '../../.vitepress/theme/components/WorksCta.vue';
 
 ## 関連リンク
 
-- [大阪公立大学 授業カタログ](https://catalog.sp.omu.ac.jp/)
+- [大阪公立大学 【臨時】授業カタログ](https://catalog.omu.moe/)
 - [非公式シラバス作ってたら大学に雇用されて公認サイトになった話](https://zenn.dev/omu_tryangle/articles/d3dfb4f369403d) - 本サイトの誕生の経緯を、開発主担のtomo0611さんが技術記事としてまとめています。

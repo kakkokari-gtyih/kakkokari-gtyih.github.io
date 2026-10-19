@@ -11,6 +11,10 @@ import WorksCta from '../../.vitepress/theme/components/WorksCta.vue';
 
 ![情報基盤センター Tools](/img/works/o_tools.webp)
 
+::: danger お知らせ
+只今大阪公立大学の情報基盤システムにおいて大規模な障害が発生しており、こちらのシステムはご覧いただけません。
+:::
+
 <WorksCta url="https://tools.cii.omu.ac.jp/" />
 
 大阪公立大学情報基盤センターが提供する各種ツール群「情報基盤センター Tools」のフロントエンド開発を担当しました。情報基盤センター Toolsは、学生や教職員が利用する便利ツールをまとめたウェブアプリです。現在以下のようなツールが提供されています。
