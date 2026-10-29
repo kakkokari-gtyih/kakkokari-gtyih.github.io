@@ -1,0 +1,4 @@
+---
+redirectPath: /
+layout: page
+---
