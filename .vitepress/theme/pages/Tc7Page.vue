@@ -77,33 +77,23 @@
             <!-- ========== タグライン ========== -->
             <TaglineReveal />
 
-            <!-- ========== 構想中のプロジェクト ========== -->
-            <section id="projects" aria-labelledby="tc7-projects-heading" class="px-4 md:px-8 pb-12">
-                <div v-reveal class="max-w-6xl mx-auto">
-                    <div class="max-w-[680px]">
-                        <p class="tc7-eyebrow caption-3">いま考えていること</p>
-                        <h2 id="tc7-projects-heading" class="heading-4 md:heading-3 mt-3">構想中のプロジェクト</h2>
-                        <p class="body-3 text-tc-ink-2 mt-4">
-                            どれもまだ途中です。だからこそ、つくる側の目線で意見をもらえるととてもうれしいです。
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- PROJECT 01：おしながきシステム -->
+            <!-- ========== 開発中のプロジェクト：おしながきシステム ========== -->
             <TornEdge color="var(--tc-sage-paper)" :seed="11" />
-            <article id="project-oshinagaki" aria-labelledby="tc7-p1-heading" class="flow-root bg-tc-sage-paper px-4 md:px-8 pt-16 md:pt-20 scroll-mt-24">
+            <article id="projects" aria-labelledby="tc7-p1-heading" class="flow-root bg-tc-sage-paper px-4 md:px-8 pt-16 md:pt-20 scroll-mt-24">
                 <div class="max-w-6xl mx-auto grid gap-12 lg:grid-cols-2 items-center">
                     <div v-reveal>
-                        <p class="tc7-eyebrow caption-3">PROJECT 01 ・ 開発中</p>
-                        <h3 id="tc7-p1-heading" class="heading-4 md:heading-3 mt-3">
+                        <p class="tc7-eyebrow caption-3">いま、つくっているもの</p>
+                        <h2 id="tc7-p1-heading" class="heading-4 md:heading-3 mt-3">
                             <span class="chunk">おしながきシステム</span><span class="chunk">（仮称）</span>
-                        </h3>
+                        </h2>
                         <p class="title-2 mt-3">
                             <span class="chunk">画像1枚の「おしながき」を、</span><span class="chunk">さがせるデータに。</span>
                         </p>
                         <p class="body-3 text-tc-ink-2 mt-4">
                             同人誌即売会で、サークルが頒布物を紹介する「おしながき」。これをWeb上のページとしてつくれるようにして、サークルをまたいだ検索や会場マップでの表示、欲しいものリストづくりまでつなげる仕組みです。
+                        </p>
+                        <p class="body-3 text-tc-ink-2 mt-4">
+                            まだ開発の途中です。だからこそ、サークル側・参加者側の目線で意見をもらえるととてもうれしいです。
                         </p>
                     </div>
                     <div v-reveal="120">
@@ -119,7 +109,7 @@
                         class="rounded-2xl border-2 border-tc-ink bg-tc-card p-6"
                     >
                         <span :class="f.icon" class="text-3xl text-tc-terra-deep" aria-hidden="true"></span>
-                        <h4 class="title-2 mt-3">{{ f.title }}</h4>
+                        <h3 class="title-2 mt-3">{{ f.title }}</h3>
                         <p class="body-6 text-tc-ink-2 mt-2">{{ f.body }}</p>
                     </li>
                 </ul>
@@ -147,52 +137,47 @@
                     </div>
                 </div>
             </article>
-            <TornEdge color="var(--tc-sage-paper)" flip :seed="13" />
-
-            <!-- PROJECT 02, 03 -->
-            <div class="px-4 md:px-8 pt-24 pb-20 md:pb-24">
-                <div class="max-w-6xl mx-auto mt-20 grid gap-8 md:grid-cols-2">
-                    <article
-                        v-for="(p, i) in sideProjects"
-                        :id="p.id"
-                        :key="p.id"
-                        v-reveal="i * 120"
-                        :aria-labelledby="`${p.id}-heading`"
-                        class="cut rounded-3xl border-2 border-tc-ink bg-tc-card p-6 md:p-8 flex flex-col scroll-mt-24"
-                    >
-                        <div class="rounded-2xl p-4" :class="p.bg">
-                            <component :is="p.illust" />
-                        </div>
-                        <p class="tc7-eyebrow caption-3 mt-6">{{ p.label }}</p>
-                        <h3 :id="`${p.id}-heading`" class="heading-5 mt-2">{{ p.title }}</h3>
-                        <p class="title-3 mt-2">{{ p.catch }}</p>
-                        <p class="body-6 text-tc-ink-2 mt-3">{{ p.body }}</p>
-                        <ul class="flex flex-wrap gap-2 mt-auto pt-6">
-                            <li v-for="t in p.tags" :key="t" class="rounded-full bg-tc-paper-2 px-2 py-1 caption-4">{{ t }}</li>
-                        </ul>
-                    </article>
-                </div>
+            <div class="bg-tc-sage-paper">
+                <TornEdge color="var(--tc-blue-paper)" :seed="23" />
             </div>
 
             <!-- ========== かけ合わせマシン ========== -->
-            <TornEdge color="var(--tc-blue-paper)" :seed="23" />
-            <section id="ideas" aria-labelledby="tc7-ideas-heading" class="bg-tc-blue-paper px-4 md:px-8 py-20 md:py-24">
-                <div class="max-w-6xl mx-auto">
-                    <div v-reveal class="max-w-[680px]">
-                        <p class="tc7-eyebrow caption-3">かけ合わせてみる</p>
-                        <h2 id="tc7-ideas-heading" class="heading-4 md:heading-3 mt-3">
-                            <span class="chunk">あなたの活動なら、</span><span class="chunk">なにができそう？</span>
-                        </h2>
-                        <p class="body-3 text-tc-ink-2 mt-4">
-                            活動に近いものを選ぶと、アイデアのタネが出てきます。ここにない組み合わせこそ、ぜひ聞いてみたいです。
+            <section id="ideas" aria-labelledby="tc7-ideas-heading" class="bg-tc-blue-paper pt-24 pb-20 md:pb-24">
+                <!-- 上のスクリーンショットがはみ出してくる分の余白（mt-16）を含む -->
+                <div class="px-4 md:px-8 mt-16">
+                    <div v-reveal class="max-w-6xl mx-auto">
+                        <div class="max-w-[680px]">
+                            <p class="tc7-eyebrow caption-3">かけ合わせてみる</p>
+                            <h2 id="tc7-ideas-heading" class="heading-4 md:heading-3 mt-3">
+                                <span class="chunk">あなたの活動なら、</span><span class="chunk">なにができそう？</span>
+                            </h2>
+                            <p class="body-3 text-tc-ink-2 mt-4">
+                                思いつくままに書き出した、アイデアのタネたちです。気になったものを押すと、くわしく見られます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12" role="region" aria-label="ぜんぶのアイデア">
+                    <IdeaMarquee @pick="onPickIdea" />
+                </div>
+
+                <div class="px-4 md:px-8 mt-16">
+                    <div class="max-w-6xl mx-auto">
+                        <h3 v-reveal class="heading-6">活動からえらぶ</h3>
+                        <IdeaMixer
+                            id="idea-mixer"
+                            v-model="selectedCreator"
+                            v-reveal
+                            :highlight="pickedIdea"
+                            class="mt-6 scroll-mt-24"
+                        />
+                        <p class="body-5 mt-12 flex flex-wrap items-center gap-2">
+                            <span class="i-ph-lightbulb text-xl text-tc-terra-deep" aria-hidden="true"></span>
+                            ここにない組み合わせを思いついたら、
+                            <a href="#contact" class="tc-link">ぜひ話しかけてください</a>
                         </p>
                     </div>
-                    <IdeaMixer v-reveal class="mt-8" />
-                    <p class="body-5 mt-12 flex flex-wrap items-center gap-2">
-                        <span class="i-ph-lightbulb text-xl text-tc-terra-deep" aria-hidden="true"></span>
-                        ほかのかけ合わせを思いついたら、
-                        <a href="#contact" class="tc-link">ぜひ話しかけてください</a>
-                    </p>
                 </div>
             </section>
             <TornEdge color="var(--tc-blue-paper)" flip :seed="29" />
@@ -425,6 +410,7 @@
 </template>
 
 <script setup lang="ts">
+import { onBeforeUnmount, ref } from 'vue';
 import '../components/tc7/tc7.css';
 import { SHOW_INVITE_NOTICE, OSHINAGAKI_SCREENSHOTS, LINKS } from '../components/tc7/config';
 import { vReveal } from '../components/tc7/reveal';
@@ -433,11 +419,27 @@ import TornEdge from '../components/tc7/TornEdge.vue';
 import ContactButtons from '../components/tc7/ContactButtons.vue';
 import TaglineReveal from '../components/tc7/TaglineReveal.vue';
 import IdeaMixer from '../components/tc7/IdeaMixer.vue';
+import IdeaMarquee from '../components/tc7/IdeaMarquee.vue';
+import { creators } from '../components/tc7/ideas';
 import ScreenshotFrame from '../components/tc7/ScreenshotFrame.vue';
 import HeroIllust from '../components/tc7/illustrations/HeroIllust.vue';
 import OshinagakiIllust from '../components/tc7/illustrations/OshinagakiIllust.vue';
-import CommunityIllust from '../components/tc7/illustrations/CommunityIllust.vue';
-import SnsGameIllust from '../components/tc7/illustrations/SnsGameIllust.vue';
+
+// 「ぜんぶのアイデア」の帯から選ばれたアイデアを、かけ合わせマシンで開く
+const selectedCreator = ref(creators[0].id);
+const pickedIdea = ref<string | null>(null);
+let pickTimer: ReturnType<typeof setTimeout> | undefined;
+
+function onPickIdea(creatorId: string, title: string) {
+    selectedCreator.value = creatorId;
+    pickedIdea.value = title;
+    clearTimeout(pickTimer);
+    pickTimer = setTimeout(() => { pickedIdea.value = null; }, 2400);
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.getElementById('idea-mixer')?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+}
+
+onBeforeUnmount(() => clearTimeout(pickTimer));
 
 const gaps = [{
     verb: '見つける',
@@ -483,26 +485,6 @@ const oshinagakiFeatures = [{
     icon: 'i-ph-smiley',
     title: 'Misskeyと連携したリアクション',
     body: 'Misskeyに投稿されたおしながきへのリアクションも取り込んで、作品への反応が見えるようにします。',
-}];
-
-const sideProjects = [{
-    id: 'project-community',
-    label: 'PROJECT 02 ・ 構想中',
-    title: 'ファンのための、専用のMisskey',
-    catch: '推しのファンだけが集まる、自分たちのSNS。',
-    body: 'オープンソースのSNS「Misskey」を、作品や活動に合わせて改造。描き下ろしのカスタム絵文字でリアクションしたり、告知やファンアートの共有をひとつの場所にまとめたりできる、ファンコミュニティをつくれます。',
-    tags: ['カスタム絵文字', '独自のデザイン', 'ミニゲーム（Play）'],
-    bg: 'bg-tc-pink-paper',
-    illust: CommunityIllust,
-}, {
-    id: 'project-snsgame',
-    label: 'PROJECT 03 ・ 構想中',
-    title: 'SNSを舞台にしたゲーム',
-    catch: 'タイムラインの向こうで、物語が動き出す。',
-    body: '本物そっくりのSNSの中で、キャラクターたちが投稿し、会話し、ときどき何かを隠している。プレイヤーは投稿を読み解いたり返信したりして、物語に関わっていきます。キャラクターの絵や声、音楽があってこそ成り立つ企画です。',
-    tags: ['謎解き', 'キャラクター', 'リアルタイム'],
-    bg: 'bg-tc-blue-paper',
-    illust: SnsGameIllust,
 }];
 
 const works = [{

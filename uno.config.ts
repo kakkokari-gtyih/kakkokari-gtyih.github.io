@@ -1,6 +1,15 @@
 import { defineConfig, presetIcons, presetWind3 } from 'unocss';
 
 export default defineConfig({
+    content: {
+        pipeline: {
+            include: [
+                /\.(vue|svelte|[jt]sx|mdx?|astro|html)($|\?)/,
+                // LP（/lp/tc7）のデータファイルに書いたクラス名も抽出する
+                /components[\\/]tc7[\\/].*\.ts($|\?)/,
+            ],
+        },
+    },
     presets: [
         presetWind3(),
         presetIcons({

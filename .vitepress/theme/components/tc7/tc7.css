@@ -38,6 +38,11 @@
   border-style: solid;
 }
 
+/* VitePress の `button { border: 0 }` で線種が消えるのを戻す（幅は border-* ユーティリティ側で指定） */
+.tc7 button {
+  border-style: solid;
+}
+
 /* オーバースクロール時に VitePress の背景色が見えないように */
 html:has(.tc7),
 html:has(.tc7) body {
