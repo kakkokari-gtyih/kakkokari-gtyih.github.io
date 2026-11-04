@@ -113,16 +113,17 @@ onBeforeUnmount(() => {
     will-change: transform;
 }
 
+/* ホバーは色の変化だけ、押すと少し沈む（ボタンと同じふるまい） */
 .tc7 .tc7-idea-chip {
-    transition: transform 300ms var(--tc-ease);
+    transition: transform 200ms var(--tc-ease), background-color 300ms var(--tc-ease);
 }
 
 .tc7 .tc7-idea-chip:hover {
-    transform: translateY(-2px) rotate(-1deg);
+    background: var(--tc-paper-2);
 }
 
 .tc7 .tc7-idea-chip:active {
-    transform: scale(0.98);
+    transform: translateY(1px);
 }
 
 /* 動きを減らす設定のときは流さず、横スクロールで見られるようにする */

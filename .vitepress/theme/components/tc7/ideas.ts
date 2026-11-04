@@ -29,7 +29,7 @@ export const creators: Creator[] = [{
         tag: { kind: 'made', label: 'ARフォトフレーム', href: '/works/omusp-arphoto' },
     }, {
         title: 'メイキングをめくれる画集',
-        body: 'ラフ、線画、色塗り。スクロールに合わせてレイヤーが重なっていき、一枚の絵ができるまでを追体験できるWeb画集。',
+        body: 'ラフ・線画・色塗り。スクロールに合わせてレイヤーが重なっていき、一枚の絵ができるまでを追体験できるWeb画集。',
         tag: { kind: 'idea' },
     }, {
         title: 'あなたの絵がリアクションになる場所',
@@ -61,7 +61,7 @@ export const creators: Creator[] = [{
     color: 'bg-tc-mustard',
     ideas: [{
         title: 'クレジットまで見やすいディスク紹介',
-        body: 'ディスクとトラック、作詞・作曲・編曲を整理して載せるページ。試聴や配信サービスへのリンクもひとまとめに。',
+        body: 'ディスクとトラック、それぞれの作詞・作曲・編曲を整理して載せるページ。試聴や配信サービスへのリンクもひとまとめに。',
         tag: { kind: 'plan', label: 'おしながきシステム', href: '#projects' },
     }, {
         title: '聴く人がミックスできる楽曲',
@@ -101,7 +101,7 @@ export const creators: Creator[] = [{
         tag: { kind: 'made', label: 'チケット風カードジェネレーター', href: '/works/milpr-ticket' },
     }, {
         title: 'ファン同士が集まれる専用SNS',
-        body: 'Misskeyをベースに、配信の告知、切り抜きやファンアートの共有、ファン同士の交流をひとつの場所で。オリジナルの絵文字で反応できます。',
+        body: 'Misskeyをベースに、配信の告知・切り抜きやファンアートの共有・ファン同士の交流を、ひとつの場所で。オリジナルの絵文字で反応できます。',
         tag: { kind: 'idea' },
     }, {
         title: '配信と連動するミニゲーム',

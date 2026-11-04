@@ -88,14 +88,15 @@ const current = computed(() => creators.find((c) => c.id === selected.value) ?? 
 }
 
 .tc7 .tc7-chip:hover {
-    transform: translateY(-2px);
+    background: var(--tc-paper-2);
 }
 
 .tc7 .tc7-chip:active {
-    transform: scale(0.98);
+    transform: translateY(1px);
 }
 
-.tc7 .tc7-chip.is-on {
+.tc7 .tc7-chip.is-on,
+.tc7 .tc7-chip.is-on:hover {
     background: var(--tc-ink);
     color: var(--tc-card);
 }
