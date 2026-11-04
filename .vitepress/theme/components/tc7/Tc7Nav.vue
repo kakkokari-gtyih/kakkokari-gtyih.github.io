@@ -77,8 +77,8 @@
 import { nextTick, onBeforeUnmount, onMounted, ref, useTemplateRef, watch } from 'vue';
 
 const items = [
-    { id: 'projects', label: '開発中' },
     { id: 'ideas', label: 'アイデア' },
+    { id: 'projects', label: '開発中' },
     { id: 'works', label: 'これまで' },
     { id: 'misskey', label: 'Misskey' },
     { id: 'faq', label: 'よくある質問' },

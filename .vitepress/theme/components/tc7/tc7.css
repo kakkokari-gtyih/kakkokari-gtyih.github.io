@@ -86,13 +86,6 @@ html:has(.tc7) body {
   display: inline-block;
 }
 
-.tc7 .hero-heading {
-  background: linear-gradient(90deg, #000000, #666666);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
 /* ---------- Misskey セクション ----------
    本筋と性質の違うセクションなので、アクセント色をまとめて Misskey の緑に差し替える */
 .tc7 .tc7-misskey {

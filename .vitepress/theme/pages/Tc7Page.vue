@@ -79,12 +79,54 @@
             <!-- ========== タグライン ========== -->
             <TaglineReveal />
 
-            <!-- ========== 開発中のプロジェクト：おしながきシステム ========== -->
-            <TornEdge color="var(--tc-sage-paper)" :seed="11" />
+            <!-- ========== かけ合わせマシン ========== -->
+            <TornEdge color="var(--tc-blue-paper)" :seed="23" />
+            <section id="ideas" aria-labelledby="tc7-ideas-heading" class="bg-tc-blue-paper py-20 md:py-24">
+                <div class="px-4 md:px-8">
+                    <div v-reveal class="max-w-6xl mx-auto">
+                        <div class="max-w-[680px]">
+                            <p class="tc7-eyebrow caption-3">かけ合わせてみる</p>
+                            <h2 id="tc7-ideas-heading" class="heading-4 md:heading-3 mt-3">
+                                <span class="chunk">あなたの活動なら、</span><span class="chunk">なにができそう？</span>
+                            </h2>
+                            <p class="body-3 text-tc-ink-2 mt-4">
+                                思いつくままに書き出した、アイデアのタネたちです。気になったものを押すと、くわしく見られます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12" role="region" aria-label="ぜんぶのアイデア">
+                    <IdeaMarquee @pick="onPickIdea" />
+                </div>
+
+                <div class="px-4 md:px-8 mt-16">
+                    <div class="max-w-6xl mx-auto">
+                        <h3 v-reveal class="heading-6">活動からえらぶ</h3>
+                        <IdeaMixer
+                            id="idea-mixer"
+                            v-model="selectedCreator"
+                            v-reveal
+                            :highlight="pickedIdea"
+                            class="mt-6 scroll-mt-24"
+                        />
+                        <p class="body-5 mt-12 flex flex-wrap items-center gap-2">
+                            <span class="i-ph-lightbulb text-xl text-tc-terra-deep" aria-hidden="true"></span>
+                            ここにない組み合わせを思いついたら、
+                            <a href="#contact" class="tc-link">ぜひ話しかけてください</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <div class="bg-tc-blue-paper">
+                <TornEdge color="var(--tc-sage-paper)" :seed="11" />
+            </div>
+
+            <!-- ========== アイデアのひとつを形にしている：おしながきシステム ========== -->
             <article id="projects" aria-labelledby="tc7-p1-heading" class="flow-root bg-tc-sage-paper px-4 md:px-8 pt-16 md:pt-20 scroll-mt-24">
                 <div class="max-w-6xl mx-auto grid gap-12 lg:grid-cols-2 items-center">
                     <div v-reveal>
-                        <p class="tc7-eyebrow caption-3">いま、つくっているもの</p>
+                        <p class="tc7-eyebrow caption-3">アイデアのひとつを、いま形にしています</p>
                         <h2 id="tc7-p1-heading" class="heading-4 md:heading-3 mt-3">
                             <span class="chunk">おしながきシステム</span><span class="chunk">（仮称）</span>
                         </h2>
@@ -139,54 +181,12 @@
                     </div>
                 </div>
             </article>
-            <div class="bg-tc-sage-paper">
-                <TornEdge color="var(--tc-blue-paper)" :seed="23" />
-            </div>
-
-            <!-- ========== かけ合わせマシン ========== -->
-            <section id="ideas" aria-labelledby="tc7-ideas-heading" class="bg-tc-blue-paper pt-24 pb-20 md:pb-24">
-                <!-- 上のスクリーンショットがはみ出してくる分の余白（mt-16）を含む -->
-                <div class="px-4 md:px-8 mt-16">
-                    <div v-reveal class="max-w-6xl mx-auto">
-                        <div class="max-w-[680px]">
-                            <p class="tc7-eyebrow caption-3">かけ合わせてみる</p>
-                            <h2 id="tc7-ideas-heading" class="heading-4 md:heading-3 mt-3">
-                                <span class="chunk">あなたの活動なら、</span><span class="chunk">なにができそう？</span>
-                            </h2>
-                            <p class="body-3 text-tc-ink-2 mt-4">
-                                思いつくままに書き出した、アイデアのタネたちです。気になったものを押すと、くわしく見られます。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-12" role="region" aria-label="ぜんぶのアイデア">
-                    <IdeaMarquee @pick="onPickIdea" />
-                </div>
-
-                <div class="px-4 md:px-8 mt-16">
-                    <div class="max-w-6xl mx-auto">
-                        <h3 v-reveal class="heading-6">活動からえらぶ</h3>
-                        <IdeaMixer
-                            id="idea-mixer"
-                            v-model="selectedCreator"
-                            v-reveal
-                            :highlight="pickedIdea"
-                            class="mt-6 scroll-mt-24"
-                        />
-                        <p class="body-5 mt-12 flex flex-wrap items-center gap-2">
-                            <span class="i-ph-lightbulb text-xl text-tc-terra-deep" aria-hidden="true"></span>
-                            ここにない組み合わせを思いついたら、
-                            <a href="#contact" class="tc-link">ぜひ話しかけてください</a>
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <TornEdge color="var(--tc-blue-paper)" flip :seed="29" />
+            <TornEdge color="var(--tc-sage-paper)" flip :seed="29" />
 
             <!-- ========== これまで ========== -->
-            <section id="works" aria-labelledby="tc7-works-heading" class="px-4 md:px-8 py-20 md:py-24">
-                <div class="max-w-6xl mx-auto">
+            <section id="works" aria-labelledby="tc7-works-heading" class="px-4 md:px-8 pt-24 pb-20 md:pb-24">
+                <!-- 上のスクリーンショットがはみ出してくる分の余白（mt-16）を含む -->
+                <div class="max-w-6xl mx-auto mt-16">
                     <div v-reveal class="max-w-[680px]">
                         <p class="tc7-eyebrow caption-3">これまで</p>
                         <h2 id="tc7-works-heading" class="heading-4 md:heading-3 mt-3">
