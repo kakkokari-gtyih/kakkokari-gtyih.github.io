@@ -417,7 +417,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, ref } from 'vue';
 import '../components/tc7/tc7.css';
-import { ENABLE_GRAIN, SHOW_INVITE_NOTICE, OSHINAGAKI_SCREENSHOTS, LINKS } from '../components/tc7/config';
+import { SHOW_INVITE_NOTICE, OSHINAGAKI_SCREENSHOTS, LINKS } from '../components/tc7/config';
 import { vReveal } from '../components/tc7/reveal';
 import Tc7Nav from '../components/tc7/Tc7Nav.vue';
 import TornEdge from '../components/tc7/TornEdge.vue';
