@@ -1,48 +1,50 @@
 <template>
-    <div class="tc7">
+    <div class="tc7 tc7-grain-on">
         <a href="#main" class="tc7-skip button-sm">本文へスキップ</a>
         <Tc7Nav />
 
         <main id="main">
             <!-- ========== ヒーロー ========== -->
-            <section aria-labelledby="tc7-hero-heading" class="px-4 md:px-8 pt-24 pb-16 md:pb-20">
-                <div class="max-w-6xl mx-auto md:pt-12 grid gap-12 lg:grid-cols-[minmax(0,1fr)_400px] items-center">
-                    <div>
-                        <p class="rise inline-flex items-center gap-2 rounded-full border-2 border-tc-ink bg-tc-card px-3 py-1 caption-3">
-                            <span class="i-ph-sparkle text-sm text-tc-terra" aria-hidden="true"></span>
-                            The CREATORS 7 でお会いした方へ
-                        </p>
-                        <h1
-                            id="tc7-hero-heading"
-                            class="rise hero-heading max-w-[680px] mt-6 heading-4 sm:heading-3 md:heading-2 lg:heading-3 xl:heading-1"
-                            style="animation-delay: 80ms"
-                        >
-                            <span class="chunk">創作と、</span><span class="chunk">技術と。</span><br>
-                            <span class="chunk">かけ合わせたら、</span><br>
-                            <span class="chunk">なにが</span><span class="chunk">生まれるだろう。</span>
-                        </h1>
-                        <p class="rise max-w-[680px] mt-6 body-3 md:title-2 text-tc-ink-2" style="animation-delay: 160ms">
-                            イラスト、漫画、音楽、声、配信。あなたの活動にWebの仕組みをひとつ足すと、作品の届け方も、ファンとの出会い方も変わるかもしれません。そんな「かけ合わせ」を、一緒に考える相手を探しています。
-                        </p>
-                        <div class="rise mt-6 flex items-center gap-3" style="animation-delay: 240ms">
-                            <img src="/img/avatar.png" alt="かっこかりのアイコン" class="w-12 h-12 rounded-full border-2 border-tc-ink bg-tc-card" />
-                            <div>
-                                <p class="title-3">かっこかり</p>
-                                <p class="caption-5 text-tc-ink-2">フロントエンドエンジニア ・ Misskey Project コアメンバー</p>
+            <div class="tc7-hero-bg">
+                <section aria-labelledby="tc7-hero-heading" class="px-4 md:px-8 pt-24 pb-16 md:pb-20">
+                    <div class="max-w-6xl mx-auto md:pt-12 grid gap-12 lg:grid-cols-[minmax(0,1fr)_400px] items-center">
+                        <div>
+                            <p class="rise inline-flex items-center gap-2 rounded-full border-2 border-tc-ink bg-tc-card px-3 py-1 caption-3">
+                                <span class="i-ph-sparkle text-sm text-tc-terra" aria-hidden="true"></span>
+                                The CREATORS 7 でお会いした方へ
+                            </p>
+                            <h1
+                                id="tc7-hero-heading"
+                                class="rise hero-heading max-w-[680px] mt-6 heading-4 sm:heading-3 md:heading-2 lg:heading-3 xl:heading-1"
+                                style="animation-delay: 80ms"
+                            >
+                                <span class="chunk">創作と、</span><span class="chunk">技術と。</span><br>
+                                <span class="chunk">かけ合わせたら、</span><br>
+                                <span class="chunk">なにが</span><span class="chunk">生まれるだろう。</span>
+                            </h1>
+                            <p class="rise max-w-[680px] mt-6 body-3 md:title-2 text-tc-ink-2" style="animation-delay: 160ms">
+                                イラスト、漫画、音楽、声、配信。あなたの活動にWebの仕組みをひとつ足すと、作品の届け方も、ファンとの出会い方も変わるかもしれません。そんな「かけ合わせ」を、一緒に考える相手を探しています。
+                            </p>
+                            <div class="rise mt-6 flex items-center gap-3" style="animation-delay: 240ms">
+                                <img src="/img/avatar.png" alt="かっこかりのアイコン" class="w-12 h-12 rounded-full border-2 border-tc-ink bg-tc-card" />
+                                <div>
+                                    <p class="title-3">かっこかり</p>
+                                    <p class="caption-5 text-tc-ink-2">フロントエンドエンジニア ・ Misskey Project コアメンバー</p>
+                                </div>
+                            </div>
+                            <div class="rise mt-8" style="animation-delay: 320ms">
+                                <ContactButtons />
                             </div>
                         </div>
-                        <div class="rise mt-8" style="animation-delay: 320ms">
-                            <ContactButtons />
+                        <div class="rise w-full max-w-[400px] mx-auto" style="animation-delay: 200ms">
+                            <HeroIllust />
                         </div>
                     </div>
-                    <div class="rise w-full max-w-[400px] mx-auto" style="animation-delay: 200ms">
-                        <HeroIllust />
-                    </div>
-                </div>
-            </section>
+                </section>
+                <TornEdge color="var(--tc-paper-2)" :seed="3" />
+            </div>
 
             <!-- ========== 課題：作品のまわりの余白 ========== -->
-            <TornEdge color="var(--tc-paper-2)" :seed="3" />
             <section aria-labelledby="tc7-gap-heading" class="bg-tc-paper-2 px-4 md:px-8 py-20 md:py-24">
                 <div class="max-w-6xl mx-auto">
                     <div v-reveal class="max-w-[680px]">
@@ -415,7 +417,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, ref } from 'vue';
 import '../components/tc7/tc7.css';
-import { SHOW_INVITE_NOTICE, OSHINAGAKI_SCREENSHOTS, LINKS } from '../components/tc7/config';
+import { ENABLE_GRAIN, SHOW_INVITE_NOTICE, OSHINAGAKI_SCREENSHOTS, LINKS } from '../components/tc7/config';
 import { vReveal } from '../components/tc7/reveal';
 import Tc7Nav from '../components/tc7/Tc7Nav.vue';
 import TornEdge from '../components/tc7/TornEdge.vue';
