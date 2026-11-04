@@ -253,10 +253,12 @@
                     </div>
                 </div>
             </section>
-            <TornEdge color="var(--tc-paper-2)" flip :seed="37" />
+            <div class="bg-tc-mk-paper">
+                <TornEdge color="var(--tc-paper-2)" flip :seed="37" />
+            </div>
 
-            <!-- ========== Misskey ========== -->
-            <section id="misskey" aria-labelledby="tc7-misskey-heading" class="px-4 md:px-8 py-20 md:py-24">
+            <!-- ========== Misskey（本筋と性質が違うので Misskey の緑ベース） ========== -->
+            <section id="misskey" aria-labelledby="tc7-misskey-heading" class="tc7-misskey bg-tc-mk-paper px-4 md:px-8 py-20 md:py-24">
                 <div class="max-w-6xl mx-auto grid gap-12 lg:grid-cols-2 items-start">
                     <div v-reveal>
                         <p class="tc7-eyebrow caption-3">Misskeyが気になった方へ</p>
@@ -267,11 +269,11 @@
                             Misskeyは、誰でも自分のサーバーを建てられるオープンソースのSNSです。投稿にカスタム絵文字でリアクションしたり、ゲームやツールを自作して共有したりと、遊べる機能がたくさんあります。わたしは2023年から、開発チームのコアメンバーとして関わっています。
                         </p>
                         <dl class="grid grid-cols-2 gap-4 mt-8">
-                            <div class="rounded-2xl border-2 border-tc-ink bg-tc-pink-paper p-4">
-                                <dt class="caption-4 text-tc-ink-2">Misskey.io の利用者</dt>
+                            <div class="rounded-2xl border-2 border-tc-ink bg-tc-mk p-4">
+                                <dt class="caption-4 text-tc-ink">Misskey.io の利用者</dt>
                                 <dd class="heading-5 md:heading-4 mt-1 ml-0">約75万人</dd>
                             </div>
-                            <div class="rounded-2xl border-2 border-tc-ink bg-tc-sage-paper p-4">
+                            <div class="rounded-2xl border-2 border-tc-ink bg-tc-card p-4">
                                 <dt class="caption-4 text-tc-ink-2">Misskey 全体（のべ）</dt>
                                 <dd class="heading-5 md:heading-4 mt-1 ml-0">約120万人</dd>
                             </div>
@@ -286,7 +288,7 @@
                             </h3>
                             <ol class="mt-6 space-y-6">
                                 <li v-for="(m, i) in misskeySteps" :key="m.title" class="flex gap-4">
-                                    <span class="w-8 h-8 rounded-full bg-tc-ink text-tc-card grid place-items-center caption-3">{{ i + 1 }}</span>
+                                    <span class="shrink-0 w-8 h-8 rounded-full border-2 border-tc-ink bg-tc-mk text-tc-ink grid place-items-center caption-3">{{ i + 1 }}</span>
                                     <div>
                                         <p class="title-3">{{ m.title }}</p>
                                         <p class="body-6 text-tc-ink-2 mt-1">
@@ -329,9 +331,10 @@
                     </div>
                 </div>
             </section>
+            <TornEdge color="var(--tc-mk-paper)" flip :seed="43" />
 
             <!-- ========== FAQ ========== -->
-            <section id="faq" aria-labelledby="tc7-faq-heading" class="px-4 md:px-8 pb-20 md:pb-24">
+            <section id="faq" aria-labelledby="tc7-faq-heading" class="px-4 md:px-8 py-20 md:py-24">
                 <div class="max-w-3xl mx-auto">
                     <div v-reveal>
                         <p class="tc7-eyebrow caption-3">よくある質問</p>

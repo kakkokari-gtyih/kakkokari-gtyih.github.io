@@ -22,6 +22,11 @@
   --tc-pink: #E2A9A0;
   --tc-pink-paper: #F3DDD7;
 
+  /* Misskey セクション用（Misskey のアクセントカラー #86B300 ベース） */
+  --tc-mk: #86B300;
+  --tc-mk-deep: #4F6B00; /* 淡い緑の上でも文字に使える濃さ */
+  --tc-mk-paper: #E9F0D3;
+
   --tc-ease: cubic-bezier(0.22, 1, 0.36, 1);
 
   --tc-font-display: 'Zen Maru Gothic', var(--vp-font-family-base);
@@ -86,6 +91,13 @@ html:has(.tc7) body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* ---------- Misskey セクション ----------
+   本筋と性質の違うセクションなので、アクセント色をまとめて Misskey の緑に差し替える */
+.tc7 .tc7-misskey {
+  --tc-terra: var(--tc-mk);
+  --tc-terra-deep: var(--tc-mk-deep);
 }
 
 /* ---------- ボタン ---------- */
