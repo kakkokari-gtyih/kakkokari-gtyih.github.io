@@ -24,7 +24,8 @@
 
   --tc-ease: cubic-bezier(0.22, 1, 0.36, 1);
 
-  font-family: 'Zen Maru Gothic', 'BIZ UDGothic', sans-serif;
+  --tc-font-display: 'Zen Maru Gothic', var(--vp-font-family-base);
+  font-family: var(--vp-font-family-base);
   color: var(--tc-ink);
   background: var(--tc-paper);
   min-height: 100svh;
@@ -55,6 +56,10 @@ html:has(.tc7) body {
 }
 
 /* ---------- 文字組み ---------- */
+
+.tc7 :is(.heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6) {
+  font-family: var(--tc-font-display);
+}
 
 .tc7 h1,
 .tc7 h2,
@@ -244,7 +249,7 @@ html:has(.tc7) body {
 .tc7 svg .s-line { stroke: var(--tc-line); stroke-width: 2; stroke-linecap: round; }
 .tc7 svg .s-terra { stroke: var(--tc-terra); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
 .tc7 svg .s-stitch { stroke: var(--tc-ink-2); stroke-width: 2; stroke-dasharray: 2 7; stroke-linecap: round; }
-.tc7 svg text { font-family: inherit; }
+.tc7 svg text { font-family: var(--tc-font-display); }
 
 /* ---------- 入場アニメーション ---------- */
 

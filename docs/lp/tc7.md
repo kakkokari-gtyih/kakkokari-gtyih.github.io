@@ -6,7 +6,7 @@ description: イラスト、漫画、音楽、声、配信。あなたの創作�
 head:
   - - link
     - rel: stylesheet
-      href: https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap
+      href: https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap
   - - meta
     - property: og:type
       content: website
