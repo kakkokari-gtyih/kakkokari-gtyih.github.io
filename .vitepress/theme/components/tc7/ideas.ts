@@ -38,7 +38,7 @@ export const creators: Creator[] = [{
     }],
 }, {
     id: 'manga',
-    label: '漫画',
+    label: 'マンガ・物語',
     icon: 'i-ph-book-open',
     color: 'bg-tc-sage',
     ideas: [{
