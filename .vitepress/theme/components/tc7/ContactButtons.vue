@@ -1,12 +1,16 @@
 <template>
     <div class="flex flex-col sm:flex-row gap-3" :class="center ? 'sm:justify-center' : ''">
         <a :href="LINKS.xProfile" target="_blank" rel="noopener" class="tc-btn tc-btn-primary button-md">
-            <span class="i-ph-x-logo text-xl" aria-hidden="true"></span>
-            XのDMで話しかける
+            <span class="tc-btn-face">
+                <span class="i-ph-x-logo text-xl" aria-hidden="true"></span>
+                XのDMで話しかける
+            </span>
         </a>
         <a :href="LINKS.form" target="_blank" rel="noopener" class="tc-btn tc-btn-secondary button-md">
-            <span class="i-ph-envelope-simple text-xl" aria-hidden="true"></span>
-            フォームで相談する
+            <span class="tc-btn-face">
+                <span class="i-ph-envelope-simple text-xl" aria-hidden="true"></span>
+                フォームで相談する
+            </span>
         </a>
     </div>
     <p class="caption-2 text-tc-ink-2 mt-4 flex items-center gap-2" :class="center ? 'justify-center' : ''">

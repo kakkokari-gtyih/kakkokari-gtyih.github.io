@@ -20,8 +20,8 @@
                 </li>
             </ul>
 
-            <a href="#contact" class="tc-btn tc-btn-primary button-sm !py-1 !rounded-full !shadow-none !hover:translate-y-0 ml-1 mr-0 md:mr-1">
-                話しかける
+            <a href="#contact" class="tc-btn tc-btn-primary tc-btn-flat button-sm !rounded-full ml-1 mr-0 md:mr-1">
+                <span class="tc-btn-face !py-1">話しかける</span>
             </a>
 
             <button

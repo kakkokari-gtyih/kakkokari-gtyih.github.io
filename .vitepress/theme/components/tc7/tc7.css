@@ -102,35 +102,74 @@ html:has(.tc7) body {
 
 /* ---------- ボタン ---------- */
 
+/*
+  立体ボタンは 2 層構造：
+  .tc-btn（台座。インク色で下に 4px はみ出す）> .tc-btn-face（本体）
+  押すと本体だけが下に translate して台座に沈む（box-shadow はアニメーションさせない）
+*/
 .tc7 .tc-btn {
+  position: relative;
+  isolation: isolate;
+  display: inline-grid;
+  border-radius: 12px;
+  padding-bottom: 4px;
+  white-space: nowrap;
+}
+
+/* 台座：本体と同じ大きさで 4px 下にずらした板。押し込んだ本体がちょうどこれに重なる */
+.tc7 .tc-btn::before {
+  content: '';
+  position: absolute;
+  inset: 4px 0 0 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--tc-ink);
+}
+
+.tc7 .tc-btn-face {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   padding: 8px 12px;
-  border-radius: 12px;
+  border-radius: inherit;
   border: 2px solid var(--tc-ink);
-  box-shadow: 0 4px 0 var(--tc-ink);
-  transition: transform 300ms var(--tc-ease), opacity 300ms var(--tc-ease);
-  white-space: nowrap;
+  transition: transform 200ms var(--tc-ease), background-color 300ms var(--tc-ease);
 }
 
-.tc7 .tc-btn:hover {
-  transform: translateY(-2px);
+.tc7 .tc-btn:active .tc-btn-face {
+  transform: translateY(4px);
 }
 
-.tc7 .tc-btn:active {
-  transform: translateY(1px) scale(0.98);
+/* 台座なし（ナビなど小さいボタン用） */
+.tc7 .tc-btn-flat {
+  padding-bottom: 0;
 }
 
-.tc7 .tc-btn-primary {
+.tc7 .tc-btn-flat::before {
+  content: none;
+}
+
+.tc7 .tc-btn-flat:active .tc-btn-face {
+  transform: translateY(1px);
+}
+
+.tc7 .tc-btn-primary .tc-btn-face {
   background: var(--tc-terra-deep);
   color: #FFFDF9;
 }
 
-.tc7 .tc-btn-secondary {
+.tc7 .tc-btn-primary:hover .tc-btn-face {
+  background: color-mix(in srgb, var(--tc-terra-deep) 82%, #FFFFFF);
+}
+
+.tc7 .tc-btn-secondary .tc-btn-face {
   background: var(--tc-card);
   color: var(--tc-ink);
+}
+
+.tc7 .tc-btn-secondary:hover .tc-btn-face {
+  background: var(--tc-paper-2);
 }
 
 .tc7 :is(a, button, summary):focus-visible {
@@ -295,9 +334,10 @@ html:has(.tc7) body {
     transform: none;
   }
 
-  .tc7 .tc-btn:hover,
-  .tc7 .tc-btn:active {
+  /* 押し込みの移動はやめて、色の変化だけにする */
+  .tc7 .tc-btn:active .tc-btn-face {
     transform: none;
+    opacity: 0.85;
   }
 }
 
