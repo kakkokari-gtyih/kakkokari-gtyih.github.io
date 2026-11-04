@@ -11,6 +11,7 @@
     "docs:preview": "vitepress preview"
   },
   "devDependencies": {
+    "@iconify-json/ph": "^1.2.2",
     "@types/markdown-it-footnote": "^3.0.4",
     "markdown-it-footnote": "^4.0.0",
     "typescript": "^6.0.3",

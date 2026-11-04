@@ -1,0 +1,285 @@
+/* ==========================================================
+   /lp/tc7 専用スタイル（.tc7 配下にスコープ）
+   ライトテーマのみ。色はここのトークンだけを編集すればよい。
+   ========================================================== */
+
+.tc7 {
+  --tc-paper: #F4EFE6;
+  --tc-paper-2: #EBE3D5;
+  --tc-card: #FCFAF6;
+  --tc-ink: #2F2A25;
+  --tc-ink-2: #675E55;
+  --tc-line: #D9CEBC;
+  --tc-cut: #DDD3C2; /* 切り絵の影 */
+
+  --tc-terra: #C7704F;
+  --tc-terra-deep: #A9553A;
+  --tc-mustard: #DDAE4E;
+  --tc-sage: #8DA486;
+  --tc-sage-paper: #DFE6D6;
+  --tc-blue: #7792AD;
+  --tc-blue-paper: #DCE3EA;
+  --tc-pink: #E2A9A0;
+  --tc-pink-paper: #F3DDD7;
+
+  --tc-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  font-family: 'Zen Maru Gothic', 'BIZ UDGothic', sans-serif;
+  color: var(--tc-ink);
+  background: var(--tc-paper);
+  min-height: 100svh;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* UnoCSS の preflight を読み込んでいないので、border-* ユーティリティが効くよう最小限のリセット（詳細度 0） */
+:where(.tc7 *, .tc7 *::before, .tc7 *::after) {
+  border-width: 0;
+  border-style: solid;
+}
+
+/* オーバースクロール時に VitePress の背景色が見えないように */
+html:has(.tc7),
+html:has(.tc7) body {
+  background: #F4EFE6;
+}
+
+.tc7 ::selection {
+  background: var(--tc-mustard);
+  color: var(--tc-ink);
+}
+
+/* ---------- 文字組み ---------- */
+
+.tc7 h1,
+.tc7 h2,
+.tc7 h3,
+.tc7 h4 {
+  text-wrap: balance;
+  word-break: auto-phrase;
+}
+
+.tc7 p,
+.tc7 li,
+.tc7 dd {
+  text-wrap: pretty;
+  word-break: auto-phrase;
+}
+
+/* 文節をまとめて改行位置を制御するためのチャンク */
+.tc7 .chunk {
+  display: inline-block;
+}
+
+.tc7 .hero-heading {
+  background: linear-gradient(90deg, #000000, #666666);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- ボタン ---------- */
+
+.tc7 .tc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 2px solid var(--tc-ink);
+  box-shadow: 0 4px 0 var(--tc-ink);
+  transition: transform 300ms var(--tc-ease), opacity 300ms var(--tc-ease);
+  white-space: nowrap;
+}
+
+.tc7 .tc-btn:hover {
+  transform: translateY(-2px);
+}
+
+.tc7 .tc-btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.tc7 .tc-btn-primary {
+  background: var(--tc-terra-deep);
+  color: #FFFDF9;
+}
+
+.tc7 .tc-btn-secondary {
+  background: var(--tc-card);
+  color: var(--tc-ink);
+}
+
+.tc7 :is(a, button, summary):focus-visible {
+  outline: 3px solid var(--tc-blue);
+  outline-offset: 3px;
+}
+
+/* テキストリンク */
+.tc7 .tc-link {
+  color: var(--tc-terra-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  text-decoration-color: color-mix(in srgb, var(--tc-terra-deep) 40%, transparent);
+  transition: opacity 300ms var(--tc-ease);
+}
+
+.tc7 .tc-link:hover {
+  opacity: 0.72;
+}
+
+/* ---------- 手づくり感のパーツ ---------- */
+
+/* マスキングテープ */
+.tc7 .tape {
+  position: absolute;
+  width: 64px;
+  height: 24px;
+  background: color-mix(in srgb, var(--tc-mustard) 72%, transparent);
+  pointer-events: none;
+}
+
+.tc7 .tape-pink {
+  background: color-mix(in srgb, var(--tc-pink) 75%, transparent);
+}
+
+.tc7 .tape-blue {
+  background: color-mix(in srgb, var(--tc-blue) 60%, transparent);
+}
+
+/* ステッチ（縫い目）の囲み線。カードの内側に一周 */
+.tc7 .stitch {
+  position: relative;
+}
+
+/* 入れ子の角丸：外側 rounded-2xl(16) − 余白 8 = 8 / 外側 rounded-3xl(24) − 8 = 16 */
+.tc7 .stitch::after,
+.tc7 .stitch-lg::after {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 2px dashed var(--tc-line);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.tc7 .stitch-lg {
+  position: relative;
+}
+
+.tc7 .stitch-lg::after {
+  border-radius: 16px;
+}
+
+/* セクションの小見出し */
+.tc7 .tc7-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--tc-terra-deep);
+}
+
+.tc7 .tc7-eyebrow::before {
+  content: '';
+  width: 16px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+/* 本文へスキップ */
+.tc7 .tc7-skip {
+  position: fixed;
+  left: 16px;
+  top: 16px;
+  z-index: 100;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: var(--tc-ink);
+  color: var(--tc-card);
+  transform: translateY(-200%);
+  transition: transform 300ms var(--tc-ease);
+}
+
+.tc7 .tc7-skip:focus {
+  transform: none;
+}
+
+/* 切り絵っぽいフラットな影 */
+.tc7 .cut {
+  box-shadow: 6px 6px 0 var(--tc-cut);
+}
+
+/* ---------- SVG イラスト用の塗り ---------- */
+
+.tc7 svg .f-paper { fill: var(--tc-paper); }
+.tc7 svg .f-paper2 { fill: var(--tc-paper-2); }
+.tc7 svg .f-card { fill: var(--tc-card); }
+.tc7 svg .f-ink { fill: var(--tc-ink); }
+.tc7 svg .f-ink2 { fill: var(--tc-ink-2); }
+.tc7 svg .f-line { fill: var(--tc-line); }
+.tc7 svg .f-cut { fill: var(--tc-cut); }
+.tc7 svg .f-terra { fill: var(--tc-terra); }
+.tc7 svg .f-terra-deep { fill: var(--tc-terra-deep); }
+.tc7 svg .f-mustard { fill: var(--tc-mustard); }
+.tc7 svg .f-sage { fill: var(--tc-sage); }
+.tc7 svg .f-sage-paper { fill: var(--tc-sage-paper); }
+.tc7 svg .f-blue { fill: var(--tc-blue); }
+.tc7 svg .f-blue-paper { fill: var(--tc-blue-paper); }
+.tc7 svg .f-pink { fill: var(--tc-pink); }
+.tc7 svg .f-pink-paper { fill: var(--tc-pink-paper); }
+.tc7 svg .f-tape { fill: var(--tc-mustard); opacity: 0.72; }
+.tc7 svg .f-tape-pink { fill: var(--tc-pink); opacity: 0.8; }
+.tc7 svg .f-none { fill: none; }
+
+.tc7 svg .s-ink { stroke: var(--tc-ink); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.tc7 svg .s-ink-thin { stroke: var(--tc-ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.tc7 svg .s-line { stroke: var(--tc-line); stroke-width: 2; stroke-linecap: round; }
+.tc7 svg .s-terra { stroke: var(--tc-terra); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.tc7 svg .s-stitch { stroke: var(--tc-ink-2); stroke-width: 2; stroke-dasharray: 2 7; stroke-linecap: round; }
+.tc7 svg text { font-family: inherit; }
+
+/* ---------- 入場アニメーション ---------- */
+
+@keyframes tc7-rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+
+.tc7 .rise {
+  animation: tc7-rise 800ms var(--tc-ease) both;
+}
+
+/* スクロールで出てくる要素（reveal.ts が付与） */
+.tc7 .tc7-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 700ms var(--tc-ease), transform 700ms var(--tc-ease);
+}
+
+.tc7 .tc7-reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tc7 .rise {
+    animation-name: tc7-fade;
+  }
+
+  .tc7 .tc7-reveal {
+    transform: none;
+  }
+
+  .tc7 .tc-btn:hover,
+  .tc7 .tc-btn:active {
+    transform: none;
+  }
+}
+
+@keyframes tc7-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
