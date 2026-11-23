@@ -2,11 +2,14 @@
 layout: blank
 title: 創作と、技術と。The CREATORS 7 でお会いした方へ
 titleTemplate: かっこかり
-description: イラスト、漫画、音楽、声、配信。あなたの創作とWebの技術をかけ合わせて、なにができるかを一緒に考えたいフロントエンドエンジニア かっこかりの特設ページです。
+description: The CREATORS 7 でお会いした方向けの特設サイト
 head:
   - - link
     - rel: stylesheet
       href: https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap
+  - - link
+    - rel: stylesheet
+      href: https://static-assets.misskey.flowers/fonts/kiyosuna-sans/font.css
   - - meta
     - property: og:type
       content: website
@@ -15,7 +18,7 @@ head:
       content: 創作と、技術と。The CREATORS 7 でお会いした方へ
   - - meta
     - property: og:description
-      content: あなたの創作とWebの技術をかけ合わせて、なにができるかを一緒に考えたいフロントエンドエンジニア かっこかりの特設ページです。
+      content: The CREATORS 7 でお会いした方向けの特設サイト
   - - meta
     - name: twitter:card
       content: summary

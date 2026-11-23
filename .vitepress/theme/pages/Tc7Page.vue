@@ -7,7 +7,7 @@
             <!-- ========== ヒーロー ========== -->
             <div class="tc7-hero-bg">
                 <section aria-labelledby="tc7-hero-heading" class="px-4 md:px-8 pt-24 pb-16 md:pb-20">
-                    <div class="max-w-6xl mx-auto md:pt-12 grid gap-12 lg:grid-cols-[minmax(0,1fr)_400px] items-center">
+                    <div class="max-w-6xl mx-auto md:pt-12 grid gap-8 lg:grid-cols-[minmax(0,1fr)_500px] items-center">
                         <div>
                             <p class="rise inline-flex items-center gap-2 rounded-full border-2 border-tc-ink bg-tc-card px-3 py-1 caption-3">
                                 <span class="i-ph-sparkle text-sm text-tc-terra" aria-hidden="true"></span>
@@ -18,15 +18,15 @@
                                 class="rise hero-heading max-w-[680px] mt-6 heading-4 sm:heading-3 md:heading-2 lg:heading-3 xl:heading-1"
                                 style="animation-delay: 80ms"
                             >
-                                <span class="chunk">創作と、</span><span class="chunk">技術と。</span><br>
+                                <span class="chunk">創作と</span><span class="chunk">技術。</span><br>
                                 <span class="chunk">かけ合わせたら、</span><br>
-                                <span class="chunk">なにが</span><span class="chunk">生まれるだろう。</span>
+                                <span class="chunk">なにが</span><span class="chunk">生まれる</span><span class="chunk">だろう。</span>
                             </h1>
-                            <p class="rise max-w-[680px] mt-6 body-3 md:title-2 text-tc-ink-2" style="animation-delay: 160ms">
-                                イラスト、漫画、音楽、声、配信。あなたの活動にWebの仕組みをひとつ足すと、作品の届け方も、ファンとの出会い方も変わるかもしれません。そんな「かけ合わせ」を、一緒に考える相手を探しています。
+                            <p class="rise max-w-[580px] mt-6 body-3 md:title-2 text-tc-ink-2" style="animation-delay: 160ms">
+                                イラスト、マンガ、音楽、音声作品、配信。あなたの活動にWebやアプリの技術を足すと、作品の届け方も、ファンとの出会い方も変わるかも。そんなあたらしい化学反応を、一緒につくりませんか。
                             </p>
                             <div class="rise mt-6 flex items-center gap-3" style="animation-delay: 240ms">
-                                <img src="/img/avatar.png" alt="かっこかりのアイコン" class="w-12 h-12 rounded-full border-2 border-tc-ink bg-tc-card" />
+                                <img src="/img/avatar.png" alt="かっこかりのアイコン" class="w-12 h-12 rounded-full bg-tc-card" />
                                 <div>
                                     <p class="title-3">かっこかり</p>
                                     <p class="caption-5 text-tc-ink-2">フロントエンドエンジニア ・ Misskey Project コアメンバー</p>
@@ -36,8 +36,8 @@
                                 <ContactButtons />
                             </div>
                         </div>
-                        <div class="rise w-full max-w-[400px] mx-auto" style="animation-delay: 200ms">
-                            <HeroIllust />
+                        <div class="rise w-full max-w-[600px] mx-auto" style="animation-delay: 200ms">
+                            <img src="/img/tc7/kv.png" alt="Hero Illustration" class="w-full h-auto" />
                         </div>
                     </div>
                 </section>
@@ -54,7 +54,7 @@
                             <span class="chunk">まだ余白がある。</span>
                         </h2>
                         <p class="body-3 text-tc-ink-2 mt-4">
-                            作品そのものは、つくる人にしか生み出せません。でも、作品がファンに見つけられ、語られ、思い出として残っていくまでの「まわり」には、技術で手伝えることがたくさんあると思っています。
+                            あなたの作品は、あなたしか生み出せません。でも、作品がファンに見つけられ、語られ、思い出として残っていく──その過程には、技術で手伝えることがたくさんあるのではと考えています。
                         </p>
                     </div>
                     <ul class="grid gap-6 md:grid-cols-3 mt-12">
@@ -90,14 +90,10 @@
                                 <span class="chunk">あなたの活動なら、</span><span class="chunk">なにができそう？</span>
                             </h2>
                             <p class="body-3 text-tc-ink-2 mt-4">
-                                思いつくままに書き出した、アイデアのタネたちです。気になったものを押すと、くわしく見られます。
+                                とは言うものの、急に言われてすぐ思いつくものではないかもしれません。私もぱっと思いついたアイデアをいくつか挙げてみました。なにかピンとくるもの・面白そうなものはありますか？
                             </p>
                         </div>
                     </div>
-                </div>
-
-                <div class="mt-12" role="region" aria-label="ぜんぶのアイデア">
-                    <IdeaMarquee @pick="onPickIdea" />
                 </div>
 
                 <div class="px-4 md:px-8 mt-16">
@@ -116,6 +112,10 @@
                             <a href="#contact" class="tc-link">ぜひ話しかけてください</a>
                         </p>
                     </div>
+                </div>
+
+                <div class="mt-16" role="region" aria-label="ぜんぶのアイデア">
+                    <IdeaMarquee @pick="onPickIdea" />
                 </div>
             </section>
             <div class="bg-tc-blue-paper">
@@ -339,8 +339,7 @@
             <section id="faq" aria-labelledby="tc7-faq-heading" class="px-4 md:px-8 py-20 md:py-24">
                 <div class="max-w-3xl mx-auto">
                     <div v-reveal>
-                        <p class="tc7-eyebrow caption-3">よくある質問</p>
-                        <h2 id="tc7-faq-heading" class="heading-4 md:heading-3 mt-3">気になること</h2>
+                        <h2 id="tc7-faq-heading" class="heading-4 md:heading-3">よくある質問</h2>
                     </div>
                     <div class="mt-8 space-y-4">
                         <details
@@ -363,13 +362,11 @@
             <TornEdge color="var(--tc-sage-paper)" :seed="41" />
             <section id="contact" aria-labelledby="tc7-contact-heading" class="bg-tc-sage-paper px-4 md:px-8 py-20 md:py-24">
                 <div v-reveal class="cut stitch-lg max-w-3xl mx-auto rounded-3xl border-2 border-tc-ink bg-tc-card px-6 py-12 md:p-16 text-center">
-                    <span class="tape" style="top: -12px; left: 40px; transform: rotate(-10deg)" aria-hidden="true"></span>
-                    <span class="tape tape-pink" style="top: -12px; right: 40px; transform: rotate(8deg)" aria-hidden="true"></span>
                     <h2 id="tc7-contact-heading" class="heading-4 md:heading-3">
-                        <span class="chunk">ちょっと、</span><span class="chunk">話してみませんか。</span>
+                        <span class="chunk">軽く</span><span class="chunk">お話しましょう🍵</span>
                     </h2>
                     <p class="body-3 text-tc-ink-2 mt-4 max-w-[680px] mx-auto">
-                        「これとこれを混ぜたら面白そう」の一言からで大丈夫です。あなたの活動のこと、ぜひ聞かせてください。
+                        「こんなことができそう！」といった軽い相談でもかまいません！あなたの活動のこともぜひ聞かせてください。
                     </p>
                     <div class="relative z-10 mt-8">
                         <ContactButtons center />
@@ -387,7 +384,7 @@
                         <span class="title-2">かっこかり</span>
                     </a>
                     <p class="caption-5 text-tc-ink-2 mt-4">
-                        このページは、<a :href="LINKS.event" target="_blank" rel="noopener" class="tc-link">The CREATORS 7</a> で出会った方に向けた個人の特設ページです。イベントの主催者とは関係ありません。
+                        こちらは<a :href="LINKS.event" target="_blank" rel="noopener" class="tc-link">The CREATORS 7</a>でお会いした方向けの特設ページです。イベント本体とは関係ありません。
                     </p>
                 </div>
                 <nav aria-label="フッター" class="grid grid-cols-2 gap-8">
@@ -496,23 +493,23 @@ const works = [{
     href: '/works/misskey',
     img: '/img/works/e_misskey.png',
     alt: 'Misskeyの画面',
-    kind: 'SNS ・ オープンソース',
+    kind: 'SNS ・ コミュニティ',
     title: 'Misskey',
-    body: 'オープンソースのSNS。2023年からコアメンバーとして、主にフロントエンドの開発に参加しています。',
+    body: '日本人が中心となって開発されているSNS。延べ利用者は120万人を超えています。2023年からコアメンバーとして、主にフロントエンドの開発に参加しています。',
 }, {
     href: '/works/omusp-arphoto',
     img: '/img/works/o_arphoto.webp',
     alt: 'ARフォトフレームの画面',
     kind: 'AR ・ イベント',
     title: 'ARフォトフレーム',
-    body: '素材と設定ファイルを足すだけで、2Dと3DのARフォトフレームをつくれる仕組み。大学の卒業式で、AR立て看板として使われました。',
+    body: '素材と設定ファイルを足すだけで簡単にARフォトフレームをつくれる仕組み。大学の入学式・卒業式などで、AR立て看板としての採用実績があります。キャラクターを配置して、推しとの記念撮影など幅広く活用できます。',
 }, {
     href: '/works/milpr-ticket',
     img: '/img/works/e_milprticket.webp',
     alt: 'チケット風カードジェネレーターの画面',
     kind: 'VTuber ・ 二次創作',
     title: 'ライブ記念のチケット風カード',
-    body: 'VTuberプロダクション「ミリプロ」の1st Liveに合わせて共同開発した、非公式の二次創作サービス。タレントご本人にも遊んでいただきました。',
+    body: 'VTuberプロダクション「ミリプロ」の1st ライブに合わせて共同開発した、非公式の二次創作サービス。タレントご本人にも遊んでいただきました。',
 }, {
     href: '/works/aiscript-docs',
     img: '/img/works/e_ais.webp',
@@ -553,28 +550,25 @@ const misskeySteps = [{
 
 const faqs = [{
     q: 'エンジニアではないのですが、話しかけても大丈夫ですか？',
-    a: 'もちろんです。技術の知識はまったく要りません。むしろ、創作をしている側から見た「こんなのがあったらいいのに」を聞かせてもらえるとうれしいです。',
+    a: '技術的な知識はまったく要りません。むしろ、創作をしている側から見た「こんなのがあったらいいのに」をお聞かせいただき、新たな気づきを得られると嬉しいなと思っています。',
 }, {
     q: 'まだ具体的なアイデアがありません。',
     a: 'それで大丈夫です。雑談やアイデアの壁打ちだけでも歓迎しています。話しているうちに形が見えてくることも多いので、気軽にどうぞ。',
 }, {
     q: 'どうやって連絡すればいいですか？',
-    a: 'XのDMか、お問い合わせフォームからどうぞ。',
+    a: 'XのDMか、お問い合わせフォームからどうぞ。当日は、1日目日中イベント・懇親会、2日目日中イベントに参加予定です。2日目懇親会には参加できないため、他のタイミングでお会いできればと思います。',
 }, {
     q: 'おしながきシステムは、いつ使えますか？',
-    a: 'いま開発を進めているところです。公開の時期が決まったら、XとMisskeyでお知らせします。サークル側の目線での意見も大歓迎です。',
+    a: '現在開発中ですが、2027年夏のコミックマーケット110に間に合うように調整中です。2027年3月ごろからベータテストを開始する予定なので、C110にサークル参加予定で気になる方はぜひお声がけください！',
 }, {
     q: 'Misskeyは、ほかのSNSと何が違うのですか？',
-    a: '大きな違いは、誰でも自分のサーバーを建てられることです。サーバーごとにルール・雰囲気・使える絵文字が違っていて、別のサーバーの人ともつながれます。',
+    a: '「いいね」の代わりに、豊富なリアクションが用意されているのが特徴。いいねだけでは伝わらない気持ちも、リアクションで手軽に表現できます。また、タイムラインや通知はリアルタイム更新。ユーザーの生の反応をダイレクトに受け取ることができます。',
 }, ...(SHOW_INVITE_NOTICE ? [{
     q: 'Misskey.io に登録しようとしたら、招待コードが必要でした。',
-    a: '現在、Misskey.io は新規登録を制限しています。The CREATORS 7 の会場で招待コードをお渡しできるので、気軽に声をかけてください。',
+    a: '現在、Misskey.io は新規登録を制限しています。The CREATORS 7 の会場で招待コードをお渡しできるので、お気軽にお声がけください。',
 }] : []), {
     q: 'どんな技術でつくっているのですか？',
-    a: '主にWebの技術です。Vue.js・Nuxt・Astroを使ったサイトやアプリのほか、Canvasでの画像生成や、ブラウザだけで動くARなどをつくってきました。アプリのインストールが要らないので、イベントやSNSで気軽に使ってもらいやすいのが強みです。',
-}, {
-    q: 'The CREATORS 7 では話せなかったのですが……',
-    a: '大丈夫です。このページにたどり着いてくださった方なら、どなたでも歓迎です。',
+    a: '主にWebの技術です。Vue.js・Nuxt・Astroといった仕組みを使ったサイトやアプリのほか、Canvasでの画像生成や、ブラウザだけで動くARなどをつくってきました。アプリのインストールが要らないので、イベントやSNSで気軽に使ってもらいやすいのが強みです。',
 }];
 
 const socials = [

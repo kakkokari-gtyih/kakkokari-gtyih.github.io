@@ -64,9 +64,9 @@ defineProps<{
 }>();
 
 const tagLabel: Record<TagKind, string> = {
-    made: 'つくったことがある',
-    plan: '開発中',
-    idea: 'アイデアのタネ',
+    made: '実績あり',
+    plan: '開発着手中',
+    idea: 'アイデア',
 };
 
 const tagClass: Record<TagKind, string> = {

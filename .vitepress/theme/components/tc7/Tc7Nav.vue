@@ -2,7 +2,7 @@
     <header class="fixed top-4 inset-x-0 z-50 flex justify-center px-4 pointer-events-none">
         <nav
             aria-label="ページ内メニュー"
-            class="tc7-navbar pointer-events-auto inline-flex items-center gap-1 rounded-full border-2 border-tc-ink p-1"
+            class="tc7-navbar pointer-events-auto inline-flex items-center gap-1 rounded-full p-1"
         >
             <a href="/" class="flex items-center gap-2 rounded-full py-1 pl-1 pr-3 transition-opacity duration-300 hover:opacity-70">
                 <img src="/img/avatar.png" alt="" class="w-8 h-8 rounded-full" />
@@ -21,7 +21,7 @@
             </ul>
 
             <a href="#contact" class="tc-btn tc-btn-primary tc-btn-flat button-sm !rounded-full ml-1 mr-0 md:mr-1">
-                <span class="tc-btn-face !py-1">話しかける</span>
+                <span class="tc-btn-face !border-none !py-1.5">話しかける</span>
             </a>
 
             <button
@@ -77,9 +77,9 @@
 import { nextTick, onBeforeUnmount, onMounted, ref, useTemplateRef, watch } from 'vue';
 
 const items = [
-    { id: 'ideas', label: 'アイデア' },
-    { id: 'projects', label: '開発中' },
-    { id: 'works', label: 'これまで' },
+    { id: 'ideas', label: 'TOP' },
+    { id: 'projects', label: 'プロジェクト例' },
+    { id: 'works', label: '実績' },
     { id: 'misskey', label: 'Misskey' },
     { id: 'faq', label: 'よくある質問' },
 ];

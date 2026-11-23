@@ -29,7 +29,7 @@
 
   --tc-ease: cubic-bezier(0.22, 1, 0.36, 1);
 
-  --tc-font-display: 'Zen Maru Gothic', var(--vp-font-family-base);
+  --tc-font-display: 'KiyosunaSans', var(--vp-font-family-base);
   font-family: var(--vp-font-family-base);
   color: var(--tc-ink);
   background: var(--tc-paper);
