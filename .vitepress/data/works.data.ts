@@ -1,6 +1,11 @@
 import { createContentLoader } from 'vitepress';
 import type { HeadConfig } from 'vitepress';
 
+function titleForComparison(post: Post): string {
+    // 括弧、すみつき括弧など、タイトルに影響しない部分を除去して比較用の文字列を生成する
+    return post.title.replace(/[\(\)\[\]\{\}<>（）［］｛｝＜＞「」『』【】]/g, '');
+}
+
 export interface Post {
     title: string
     url: string
@@ -25,7 +30,7 @@ export default createContentLoader('works/*.md', {
                 thumbnail: frontmatter.thumbnail ?? null,
                 date: formatDate(frontmatter.date),
             }))
-            .sort((a, b) => b.date.time - a.date.time);
+            .sort((a, b) => titleForComparison(a).localeCompare(titleForComparison(b)));
     },
 })
 

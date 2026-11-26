@@ -1,6 +1,6 @@
 <template>
     <div v-if="isBlank">
-        <slot></slot>
+        <Content v-if="route.data.frontmatter?.redirectPath == null" />
     </div>
     <Layout v-else>
         <template v-if="route.path.startsWith('/works/') && !['/works/', '/works'].includes(route.path)" #doc-before>
@@ -12,11 +12,10 @@
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue';
-import { useRoute } from 'vitepress';
-import DefaultTheme from 'vitepress/theme-without-fonts';
+import { computed, defineAsyncComponent } from 'vue';
+import { useRoute, Content } from 'vitepress';
 
-const { Layout } = DefaultTheme;
+const Layout = defineAsyncComponent(() => import('vitepress/theme-without-fonts').then(m => m.default.Layout));
 
 const route = useRoute();
 const isBlank = computed(() => route.data.frontmatter?.layout === 'blank' || route.data.frontmatter?.redirectPath != null);

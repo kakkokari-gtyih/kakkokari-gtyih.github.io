@@ -106,6 +106,9 @@
             </ul>
         </div>
     </div>
+    <a href="/lp/tc7" class="fixed block right-8 bottom-8 rounded-full px-4 py-2 bg-[#A9553A] hover:bg-[#C7704F] text-sm text-white font-bold">
+        The CREATORS 7 特設ページ<i class="i-ph-arrow-right inline-block ml-1"></i>
+    </a>
 </template>
 
 <script setup lang="ts">

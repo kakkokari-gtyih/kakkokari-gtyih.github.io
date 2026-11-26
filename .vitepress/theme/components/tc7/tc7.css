@@ -1,0 +1,361 @@
+/* ==========================================================
+   /lp/tc7 専用スタイル（.tc7 配下にスコープ）
+   ライトテーマのみ。色はここのトークンだけを編集すればよい。
+   ========================================================== */
+
+.tc7 {
+  --tc-paper: #F4EFE6;
+  --tc-paper-2: #EBE3D5;
+  --tc-card: #FCFAF6;
+  --tc-ink: #2F2A25;
+  --tc-ink-2: #675E55;
+  --tc-line: #D9CEBC;
+  --tc-cut: #DDD3C2; /* 切り絵の影 */
+
+  --tc-terra: #C7704F;
+  --tc-terra-deep: #A9553A;
+  --tc-mustard: #DDAE4E;
+  --tc-sage: #8DA486;
+  --tc-sage-paper: #DFE6D6;
+  --tc-blue: #7792AD;
+  --tc-blue-paper: #DCE3EA;
+  --tc-pink: #E2A9A0;
+  --tc-pink-paper: #F3DDD7;
+
+  /* Misskey セクション用（Misskey のアクセントカラー #86B300 ベース） */
+  --tc-mk: #86B300;
+  --tc-mk-deep: #4F6B00; /* 淡い緑の上でも文字に使える濃さ */
+  --tc-mk-paper: #E9F0D3;
+
+  --tc-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --tc-font-display: 'KiyosunaSans', var(--vp-font-family-base);
+  font-family: var(--vp-font-family-base);
+  color: var(--tc-ink);
+  background: var(--tc-paper);
+  min-height: 100svh;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* UnoCSS の preflight を読み込んでいないので、border-* ユーティリティが効くよう最小限のリセット（詳細度 0） */
+:where(.tc7 *, .tc7 *::before, .tc7 *::after) {
+  border-width: 0;
+  border-style: solid;
+}
+
+/* VitePress の `button { border: 0 }` で線種が消えるのを戻す（幅は border-* ユーティリティ側で指定） */
+.tc7 button {
+  border-style: solid;
+}
+
+/* オーバースクロール時に VitePress の背景色が見えないように */
+html:has(.tc7),
+html:has(.tc7) body {
+  background: #F4EFE6;
+}
+
+.tc7 ::selection {
+  background: var(--tc-mustard);
+  color: var(--tc-ink);
+}
+
+/* ---------- 文字組み ---------- */
+
+.tc7 :is(.heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6) {
+  font-family: var(--tc-font-display);
+}
+
+.tc7 h1,
+.tc7 h2,
+.tc7 h3,
+.tc7 h4 {
+  text-wrap: balance;
+  word-break: auto-phrase;
+}
+
+.tc7 p,
+.tc7 li,
+.tc7 dd {
+  text-wrap: pretty;
+  word-break: auto-phrase;
+}
+
+/* 文節をまとめて改行位置を制御するためのチャンク */
+.tc7 .chunk {
+  display: inline-block;
+}
+
+/* ---------- Misskey セクション ----------
+   本筋と性質の違うセクションなので、アクセント色をまとめて Misskey の緑に差し替える */
+.tc7 .tc7-misskey {
+  --tc-terra: var(--tc-mk);
+  --tc-terra-deep: var(--tc-mk-deep);
+}
+
+/* ---------- ボタン ---------- */
+
+/*
+  立体ボタンは 2 層構造：
+  .tc-btn（台座。インク色で下に 4px はみ出す）> .tc-btn-face（本体）
+  押すと本体だけが下に translate して台座に沈む（box-shadow はアニメーションさせない）
+*/
+.tc7 .tc-btn {
+  position: relative;
+  isolation: isolate;
+  display: inline-grid;
+  border-radius: 12px;
+  padding-bottom: 4px;
+  white-space: nowrap;
+}
+
+/* 台座：本体と同じ大きさで 4px 下にずらした板。押し込んだ本体がちょうどこれに重なる */
+.tc7 .tc-btn::before {
+  content: '';
+  position: absolute;
+  inset: 4px 0 0 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--tc-ink);
+}
+
+.tc7 .tc-btn-face {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: inherit;
+  border: 2px solid var(--tc-ink);
+  transition: transform 200ms var(--tc-ease), background-color 300ms var(--tc-ease);
+}
+
+.tc7 .tc-btn:active .tc-btn-face {
+  transform: translateY(4px);
+}
+
+/* 台座なし（ナビなど小さいボタン用） */
+.tc7 .tc-btn-flat {
+  padding-bottom: 0;
+}
+
+.tc7 .tc-btn-flat::before {
+  content: none;
+}
+
+.tc7 .tc-btn-flat:active .tc-btn-face {
+  transform: translateY(1px);
+}
+
+.tc7 .tc-btn-primary .tc-btn-face {
+  background: var(--tc-terra-deep);
+  color: #FFFDF9;
+}
+
+.tc7 .tc-btn-primary:hover .tc-btn-face {
+  background: color-mix(in srgb, var(--tc-terra-deep) 82%, #FFFFFF);
+}
+
+.tc7 .tc-btn-secondary .tc-btn-face {
+  background: var(--tc-card);
+  color: var(--tc-ink);
+}
+
+.tc7 .tc-btn-secondary:hover .tc-btn-face {
+  background: var(--tc-paper-2);
+}
+
+.tc7 :is(a, button, summary):focus-visible {
+  outline: 3px solid var(--tc-blue);
+  outline-offset: 3px;
+}
+
+/* テキストリンク */
+.tc7 .tc-link {
+  color: var(--tc-terra-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  text-decoration-color: color-mix(in srgb, var(--tc-terra-deep) 40%, transparent);
+  transition: opacity 300ms var(--tc-ease);
+}
+
+.tc7 .tc-link:hover {
+  opacity: 0.72;
+}
+
+/* ---------- 手づくり感のパーツ ---------- */
+
+/* マスキングテープ */
+.tc7 .tape {
+  position: absolute;
+  width: 64px;
+  height: 24px;
+  background: color-mix(in srgb, var(--tc-mustard) 72%, transparent);
+  pointer-events: none;
+}
+
+.tc7 .tape-pink {
+  background: color-mix(in srgb, var(--tc-pink) 75%, transparent);
+}
+
+.tc7 .tape-blue {
+  background: color-mix(in srgb, var(--tc-blue) 60%, transparent);
+}
+
+.tc7 {
+  --tc-noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.18 0 0 0 0 0.16 0 0 0 0 0.14 1.1 0 0 0 -0.6'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.tc7.tc7-grain-on .tc7-hero-bg {
+  position: relative;
+  isolation: isolate;
+}
+
+.tc7.tc7-grain-on .tc7-hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: var(--tc-noise);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.tc7.tc7-grain-on .tape {
+  overflow: hidden;
+}
+
+.tc7.tc7-grain-on .tape::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--tc-noise);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* ステッチ（縫い目）の囲み線。カードの内側に一周 */
+.tc7 .stitch {
+  position: relative;
+}
+
+/* 入れ子の角丸：外側 rounded-2xl(16) − 余白 8 = 8 / 外側 rounded-3xl(24) − 8 = 16 */
+.tc7 .stitch::after,
+.tc7 .stitch-lg::after {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 2px dashed var(--tc-line);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.tc7 .stitch-lg {
+  position: relative;
+}
+
+.tc7 .stitch-lg::after {
+  border-radius: 16px;
+}
+
+/* セクションの小見出し */
+.tc7 .tc7-eyebrow {
+  @apply w-fit px-4 py-2 bg-tc-card rounded-full rounded-bl-none;
+}
+
+/* 本文へスキップ */
+.tc7 .tc7-skip {
+  position: fixed;
+  left: 16px;
+  top: 16px;
+  z-index: 100;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: var(--tc-ink);
+  color: var(--tc-card);
+  transform: translateY(-200%);
+  transition: transform 300ms var(--tc-ease);
+}
+
+.tc7 .tc7-skip:focus {
+  transform: none;
+}
+
+/* 切り絵っぽいフラットな影 */
+.tc7 .cut {
+  box-shadow: 6px 6px 0 var(--tc-cut);
+}
+
+/* ---------- SVG イラスト用の塗り ---------- */
+
+.tc7 svg .f-paper { fill: var(--tc-paper); }
+.tc7 svg .f-paper2 { fill: var(--tc-paper-2); }
+.tc7 svg .f-card { fill: var(--tc-card); }
+.tc7 svg .f-ink { fill: var(--tc-ink); }
+.tc7 svg .f-ink2 { fill: var(--tc-ink-2); }
+.tc7 svg .f-line { fill: var(--tc-line); }
+.tc7 svg .f-cut { fill: var(--tc-cut); }
+.tc7 svg .f-terra { fill: var(--tc-terra); }
+.tc7 svg .f-terra-deep { fill: var(--tc-terra-deep); }
+.tc7 svg .f-mustard { fill: var(--tc-mustard); }
+.tc7 svg .f-sage { fill: var(--tc-sage); }
+.tc7 svg .f-sage-paper { fill: var(--tc-sage-paper); }
+.tc7 svg .f-blue { fill: var(--tc-blue); }
+.tc7 svg .f-blue-paper { fill: var(--tc-blue-paper); }
+.tc7 svg .f-pink { fill: var(--tc-pink); }
+.tc7 svg .f-pink-paper { fill: var(--tc-pink-paper); }
+.tc7 svg .f-tape { fill: var(--tc-mustard); opacity: 0.72; }
+.tc7 svg .f-tape-pink { fill: var(--tc-pink); opacity: 0.8; }
+.tc7 svg .f-none { fill: none; }
+
+.tc7 svg .s-ink { stroke: var(--tc-ink); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.tc7 svg .s-ink-thin { stroke: var(--tc-ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.tc7 svg .s-line { stroke: var(--tc-line); stroke-width: 2; stroke-linecap: round; }
+.tc7 svg .s-terra { stroke: var(--tc-terra); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.tc7 svg .s-stitch { stroke: var(--tc-ink-2); stroke-width: 2; stroke-dasharray: 2 7; stroke-linecap: round; }
+.tc7 svg text { font-family: var(--tc-font-display); }
+
+/* ---------- 入場アニメーション ---------- */
+
+@keyframes tc7-rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+
+.tc7 .rise {
+  animation: tc7-rise 800ms var(--tc-ease) both;
+}
+
+/* スクロールで出てくる要素（reveal.ts が付与） */
+.tc7 .tc7-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 700ms var(--tc-ease), transform 700ms var(--tc-ease);
+}
+
+.tc7 .tc7-reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tc7 .rise {
+    animation-name: tc7-fade;
+  }
+
+  .tc7 .tc7-reveal {
+    transform: none;
+  }
+
+  /* 押し込みの移動はやめて、色の変化だけにする */
+  .tc7 .tc-btn:active .tc-btn-face {
+    transform: none;
+    opacity: 0.85;
+  }
+}
+
+@keyframes tc7-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
