@@ -166,7 +166,7 @@
                             variant="pc"
                             class="w-[86%]"
                             :src="OSHINAGAKI_SCREENSHOTS.pc"
-                            alt="おしながきシステムのパソコン画面"
+                            alt="おしながきシステムのイベントトップ画面。検索窓と、イベント名・開催日・会場が載ったヘッダーが並ぶ"
                             placeholder="{{oshinagaki_screenshot_pc}}"
                         />
                         <div class="absolute right-0 -bottom-8 w-[28%] md:w-[22%] rotate-3">
@@ -174,7 +174,7 @@
                             <ScreenshotFrame
                                 variant="mobile"
                                 :src="OSHINAGAKI_SCREENSHOTS.mobile"
-                                alt="おしながきシステムのスマートフォン画面"
+                                alt="おしながきシステムのスマートフォン版の会場マップ画面"
                                 placeholder="{{oshinagaki_screenshot_mobile}}"
                             />
                         </div>
@@ -196,7 +196,7 @@
                             エンタメのすぐそばで、技術を使ってつくってきたものです。
                         </p>
                     </div>
-                    <ul class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mt-12">
+                    <ul class="grid gap-8 md:grid-cols-3 mt-12">
                         <li v-for="(w, i) in works" :key="w.href" v-reveal="i * 80">
                             <a
                                 :href="w.href"
@@ -510,13 +510,6 @@ const works = [{
     kind: 'VTuber ・ 二次創作',
     title: 'ライブ記念のチケット風カード',
     body: 'VTuberプロダクション「ミリプロ」の1st ライブに合わせて共同開発した、非公式の二次創作サービス。タレントご本人にも遊んでいただきました。',
-}, {
-    href: '/works/aiscript-docs',
-    img: '/img/works/e_ais.webp',
-    alt: 'AiScriptドキュメンテーションサイトの画面',
-    kind: 'ゲーム ・ ツールづくり',
-    title: 'AiScript ドキュメント',
-    body: 'Misskeyの中でゲームやツールをつくれる言語「AiScript」のドキュメントサイト。ブラウザ上でそのままコードを試せます。',
 }];
 
 const steps = [{

@@ -10,8 +10,8 @@ export const SHOW_INVITE_NOTICE = true;
  * docs/public/img/lp/tc7/ などに画像を置き、パスを入れると差し替わる（null の間はプレースホルダー表示）
  */
 export const OSHINAGAKI_SCREENSHOTS: { pc: string | null; mobile: string | null } = {
-    pc: null,
-    mobile: null,
+    pc: '/img/tc7/oshinagaki_pc.png',
+    mobile: '/img/tc7/oshinagaki_sp.png',
 };
 
 export const LINKS = {

@@ -8,7 +8,8 @@
             <span class="w-3 h-3 rounded-full bg-tc-mustard"></span>
             <span class="w-3 h-3 rounded-full bg-tc-sage"></span>
         </div>
-        <div :class="variant === 'pc' ? 'aspect-[16/10]' : 'aspect-[9/19]'">
+        <!-- スクリーンショットの比率（PC 16:9 / スマートフォン 630×1366）に合わせる -->
+        <div :class="variant === 'pc' ? 'aspect-video' : 'aspect-[630/1366]'">
             <img v-if="src" :src="src" :alt="alt" class="block w-full h-full object-cover object-top" loading="lazy" />
             <div
                 v-else
