@@ -113,9 +113,7 @@
                     <IdeaMarquee @pick="onPickIdea" />
                 </div>
             </section>
-            <div class="bg-tc-blue-paper">
-                <TornEdge color="var(--tc-sage-paper)" :seed="11" />
-            </div>
+            <TornEdge color="var(--tc-sage-paper)" :seed="11" />
 
             <!-- ========== アイデアのひとつを形にしている：おしながきシステム ========== -->
             <article id="projects" aria-labelledby="tc7-p1-heading" class="flow-root bg-tc-sage-paper px-4 md:px-8 pt-16 md:pt-20 scroll-mt-24">
