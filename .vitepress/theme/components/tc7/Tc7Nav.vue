@@ -21,7 +21,7 @@
             </ul>
 
             <a href="#contact" class="tc-btn tc-btn-primary tc-btn-flat button-sm !rounded-full ml-1 mr-0 md:mr-1">
-                <span class="tc-btn-face !border-none !py-1.5">話しかける</span>
+                <span class="tc-btn-face !border-none !py-1.5">話してみる</span>
             </a>
 
             <button
@@ -48,7 +48,7 @@
         >
             <ul class="flex flex-col gap-2">
                 <li
-                    v-for="(item, i) in [...items, { id: 'contact', label: '話しかける' }]"
+                    v-for="(item, i) in [...items, { id: 'contact', label: '話してみる' }]"
                     :key="item.id"
                     class="tc7-menu-item"
                     :style="{ animationDelay: `${Math.min(i * 60, 400)}ms` }"

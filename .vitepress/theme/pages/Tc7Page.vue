@@ -9,7 +9,7 @@
                 <section aria-labelledby="tc7-hero-heading" class="px-4 md:px-8 pt-24 pb-16 md:pb-20">
                     <div class="max-w-6xl mx-auto md:pt-12 grid gap-8 lg:grid-cols-[minmax(0,1fr)_500px] items-center">
                         <div>
-                            <p class="rise inline-flex items-center gap-2 rounded-full border-2 border-tc-ink bg-tc-card px-3 py-1 caption-3">
+                            <p class="rise inline-flex items-center gap-2 rounded-full rounded-bl-none bg-tc-card px-4 py-2 caption-3">
                                 <span class="i-ph-sparkle text-sm text-tc-terra" aria-hidden="true"></span>
                                 The CREATORS 7 でお会いした方へ
                             </p>
@@ -76,12 +76,7 @@
             </section>
             <TornEdge color="var(--tc-paper-2)" flip :seed="5" />
 
-            <!-- ========== タグライン ========== -->
-            <TaglineReveal />
-
-            <!-- ========== かけ合わせマシン ========== -->
-            <TornEdge color="var(--tc-blue-paper)" :seed="23" />
-            <section id="ideas" aria-labelledby="tc7-ideas-heading" class="bg-tc-blue-paper py-20 md:py-24">
+            <section id="ideas" aria-labelledby="tc7-ideas-heading" class="bg-tc-paper py-20 md:py-24">
                 <div class="px-4 md:px-8">
                     <div v-reveal class="max-w-6xl mx-auto">
                         <div class="max-w-[680px]">
@@ -90,7 +85,7 @@
                                 <span class="chunk">あなたの活動なら、</span><span class="chunk">なにができそう？</span>
                             </h2>
                             <p class="body-3 text-tc-ink-2 mt-4">
-                                とは言うものの、急に言われてすぐ思いつくものではないかもしれません。私もぱっと思いついたアイデアをいくつか挙げてみました。なにかピンとくるもの・面白そうなものはありますか？
+                                とは言うものの、急に言われてすぐ思いつくものではないかもしれません。ということで、私でぱっと思いついたアイデアをいくつか挙げてみました（それぞれの業界のことをあまりよく知らずに考えているので見当違いだったらすみません…）。なにかピンとくるもの・面白そうなものはありますか？
                             </p>
                         </div>
                     </div>
@@ -126,18 +121,18 @@
             <article id="projects" aria-labelledby="tc7-p1-heading" class="flow-root bg-tc-sage-paper px-4 md:px-8 pt-16 md:pt-20 scroll-mt-24">
                 <div class="max-w-6xl mx-auto grid gap-12 lg:grid-cols-2 items-center">
                     <div v-reveal>
-                        <p class="tc7-eyebrow caption-3">アイデアのひとつを、いま形にしています</p>
+                        <p class="tc7-eyebrow caption-3">現在開発中！</p>
                         <h2 id="tc7-p1-heading" class="heading-4 md:heading-3 mt-3">
                             <span class="chunk">おしながきシステム</span><span class="chunk">（仮称）</span>
                         </h2>
                         <p class="title-2 mt-3">
-                            <span class="chunk">画像1枚の「おしながき」を、</span><span class="chunk">さがせるデータに。</span>
+                            <span class="chunk">同人誌即売会の頒布物を</span><span class="chunk">探せる、見つけられるアプリ</span>
                         </p>
                         <p class="body-3 text-tc-ink-2 mt-4">
-                            同人誌即売会で、サークルが頒布物を紹介する「おしながき」。これをWeb上のページとしてつくれるようにして、サークルをまたいだ検索・会場マップでの表示・欲しいものリストづくりまでつなげる仕組みです。
+                            同人誌即売会で、サークルが頒布物を紹介する「おしながき」。これをWeb上のページとして公開できるようにし、サークルや作品名をまたいだ検索・会場マップでの表示・欲しいものリストづくりなど、同人誌即売会をより便利に楽しめるアプリを開発中です。
                         </p>
                         <p class="body-3 text-tc-ink-2 mt-4">
-                            まだ開発の途中です。だからこそ、サークル側・参加者側の目線で意見をもらえるととてもうれしいです。
+                            こちらは現在開発中で、2027年3月ごろから限定公開でのベータ版テストを開始していく予定です。ご意見・ご感想や、試してみたい等ぜひお気軽にどうぞ！
                         </p>
                     </div>
                     <div v-reveal="120">
@@ -188,12 +183,12 @@
                 <!-- 上のスクリーンショットがはみ出してくる分の余白（mt-16）を含む -->
                 <div class="max-w-6xl mx-auto mt-16">
                     <div v-reveal class="max-w-[680px]">
-                        <p class="tc7-eyebrow caption-3">これまで</p>
+                        <p class="tc7-eyebrow caption-3">これまでの実績</p>
                         <h2 id="tc7-works-heading" class="heading-4 md:heading-3 mt-3">
-                            <span class="chunk">かけ合わせて、</span><span class="chunk">つくってきたもの</span>
+                            <span class="chunk">クリエイティブと技術を</span><span class="chunk">掛け合わせると…</span>
                         </h2>
                         <p class="body-3 text-tc-ink-2 mt-4">
-                            エンタメのすぐそばで、技術を使ってつくってきたものです。
+                            イラストやVTuberの活動に根差したアプリなど、クリエイティブと技術の交わる部分でこれまで作ったものをピックアップしてご紹介します。
                         </p>
                     </div>
                     <ul class="grid gap-8 md:grid-cols-3 mt-12">
@@ -218,65 +213,33 @@
                         </li>
                     </ul>
                     <a href="/works/" class="tc-link body-4 mt-12 inline-flex items-center gap-1">
-                        つくったものをすべて見る
+                        「つくったもの」一覧はこちら（ポートフォリオへ）
                         <span class="i-ph-arrow-right text-base" aria-hidden="true"></span>
                     </a>
                 </div>
             </section>
 
-            <!-- ========== 進め方 ========== -->
-            <TornEdge color="var(--tc-paper-2)" :seed="31" />
-            <section aria-labelledby="tc7-steps-heading" class="bg-tc-paper-2 px-4 md:px-8 py-20 md:py-24">
-                <div class="max-w-6xl mx-auto">
-                    <div v-reveal class="max-w-[680px]">
-                        <p class="tc7-eyebrow caption-3">一緒にやるなら</p>
-                        <h2 id="tc7-steps-heading" class="heading-4 md:heading-3 mt-3">まずは、話すところから。</h2>
-                    </div>
-                    <ol class="grid gap-6 md:grid-cols-3 mt-12">
-                        <li
-                            v-for="(s, i) in steps"
-                            :key="s.title"
-                            v-reveal="i * 100"
-                            class="rounded-2xl border-2 border-tc-ink bg-tc-card p-6"
-                        >
-                            <span class="inline-flex items-center gap-2">
-                                <span class="w-10 h-10 rounded-full border-2 border-tc-ink grid place-items-center heading-6" :class="s.bg">{{ i + 1 }}</span>
-                                <span :class="s.icon" class="text-2xl text-tc-ink-2" aria-hidden="true"></span>
-                            </span>
-                            <h3 class="heading-6 mt-4">{{ s.title }}</h3>
-                            <p class="body-6 text-tc-ink-2 mt-2">{{ s.body }}</p>
-                        </li>
-                    </ol>
-                    <div v-reveal class="relative max-w-[680px] mx-auto mt-16 -rotate-1 rounded-2xl border-2 border-tc-ink bg-tc-card p-6 text-center">
-                        <span class="tape tape-pink" style="top: -12px; left: 24px; transform: rotate(-8deg)" aria-hidden="true"></span>
-                        <span class="tape" style="top: -12px; right: 24px; transform: rotate(6deg)" aria-hidden="true"></span>
-                        <p class="title-2">具体的な話になっていなくても、大丈夫です。</p>
-                        <p class="body-3 text-tc-ink-2 mt-2">思いついたことを話すところから、一緒に始めましょう。</p>
-                    </div>
-                </div>
-            </section>
-            <div class="bg-tc-mk-paper">
-                <TornEdge color="var(--tc-paper-2)" flip :seed="37" />
-            </div>
-
             <!-- ========== Misskey（本筋と性質が違うので Misskey の緑ベース） ========== -->
+            <div class="bg-tc-mk-paper">
+                <TornEdge color="var(--tc-paper)" flip :seed="37" />
+            </div>
             <section id="misskey" aria-labelledby="tc7-misskey-heading" class="tc7-misskey bg-tc-mk-paper px-4 md:px-8 py-20 md:py-24">
                 <div class="max-w-6xl mx-auto grid gap-12 lg:grid-cols-2 items-start">
                     <div v-reveal>
                         <p class="tc7-eyebrow caption-3">Misskeyが気になった方へ</p>
                         <h2 id="tc7-misskey-heading" class="heading-4 md:heading-3 mt-3">
-                            <span class="chunk">絵文字で遊べるSNS、</span><span class="chunk">Misskey。</span>
+                            <span class="chunk">リアクションで気軽につながる。</span><span class="chunk">リアルタイムで直接届く。</span>
                         </h2>
                         <p class="body-3 text-tc-ink-2 mt-4">
-                            Misskeyは、誰でも自分のサーバーを建てられるオープンソースのSNSです。投稿にカスタム絵文字でリアクションしたり、ゲームやツールを自作して共有したりと、遊べる機能がたくさんあります。わたしは2023年から、開発チームのコアメンバーとして関わっています。
+                            Misskeyは、日本で生まれたオープンソースのSNS構築ソフトです。カスタム絵文字のリアクションやリアルタイム性、Webアプリの高い拡張性などが特徴です。私は2023年から開発チームのコアメンバーとして開発に参加しています。
                         </p>
                         <dl class="grid grid-cols-2 gap-4 mt-8">
-                            <div class="rounded-2xl border-2 border-tc-ink bg-tc-mk p-4">
+                            <div class="rounded-2xl border-2 border-tc-ink bg-tc-card p-4">
                                 <dt class="caption-4 text-tc-ink">Misskey.io の利用者</dt>
                                 <dd class="heading-5 md:heading-4 mt-1 ml-0">約75万人</dd>
                             </div>
                             <div class="rounded-2xl border-2 border-tc-ink bg-tc-card p-4">
-                                <dt class="caption-4 text-tc-ink-2">Misskey 全体（のべ）</dt>
+                                <dt class="caption-4 text-tc-ink-2">Misskey 全体（推定）</dt>
                                 <dd class="heading-5 md:heading-4 mt-1 ml-0">約120万人</dd>
                             </div>
                         </dl>
@@ -290,7 +253,7 @@
                             </h3>
                             <ol class="mt-6 space-y-6">
                                 <li v-for="(m, i) in misskeySteps" :key="m.title" class="flex gap-4">
-                                    <span class="shrink-0 w-8 h-8 rounded-full border-2 border-tc-ink bg-tc-mk text-tc-ink grid place-items-center caption-3">{{ i + 1 }}</span>
+                                    <span class="shrink-0 w-8 h-8 rounded-full border-2 border-tc-ink bg-tc-mk text-white grid place-items-center">{{ i + 1 }}</span>
                                     <div>
                                         <p class="title-3">{{ m.title }}</p>
                                         <p class="body-6 text-tc-ink-2 mt-1">
@@ -309,7 +272,7 @@
                                 </li>
                                 <li>
                                     <a :href="LINKS.misskeyHub" target="_blank" rel="noopener" class="tc-link body-4 inline-flex items-center gap-1">
-                                        Misskey Hub（公式サイト）を見る
+                                        Misskey Hub（プロジェクト公式サイト）を見る
                                         <span class="i-ph-arrow-up-right text-base" aria-hidden="true"></span>
                                     </a>
                                 </li>
@@ -319,15 +282,15 @@
                         <aside
                             v-if="SHOW_INVITE_NOTICE"
                             aria-labelledby="tc7-invite-heading"
-                            class="relative rotate-1 rounded-2xl border-2 border-tc-ink bg-tc-mustard p-6"
+                            class="relative rotate-1 rounded-2xl border-2 border-tc-ink bg-tc-paper p-6"
                         >
                             <span class="tape tape-blue" style="top: -12px; left: 50%; transform: translateX(-50%) rotate(-3deg)" aria-hidden="true"></span>
                             <h3 id="tc7-invite-heading" class="title-1 flex items-center gap-2">
                                 <span class="i-ph-ticket text-2xl" aria-hidden="true"></span>
-                                招待コード、持っていきます
+                                招待コード・特製はじめかたガイドを配布！
                             </h3>
                             <p class="body-6 mt-2">
-                                現在、Misskey.io は新規登録を制限しています。The CREATORS 7 の会場で招待コードをお渡しできるので、欲しい方は気軽に声をかけてください。
+                                The CREATORS 7 の会場で招待コード（台紙に特製Misskeyはじめかたガイド付き！）を発行できますので、気になる方はぜひ気軽にお声がけください。
                             </p>
                         </aside>
                     </div>
@@ -363,7 +326,7 @@
             <section id="contact" aria-labelledby="tc7-contact-heading" class="bg-tc-sage-paper px-4 md:px-8 py-20 md:py-24">
                 <div v-reveal class="cut stitch-lg max-w-3xl mx-auto rounded-3xl border-2 border-tc-ink bg-tc-card px-6 py-12 md:p-16 text-center">
                     <h2 id="tc7-contact-heading" class="heading-4 md:heading-3">
-                        <span class="chunk">軽く</span><span class="chunk">お話しましょう🍵</span>
+                        <span class="chunk">ぜひ軽く</span><span class="chunk">お話しましょう🍵</span>
                     </h2>
                     <p class="body-3 text-tc-ink-2 mt-4 max-w-[680px] mx-auto">
                         「こんなことができそう！」といった軽い相談でもかまいません！あなたの活動のこともぜひ聞かせてください。
@@ -384,7 +347,7 @@
                         <span class="title-2">かっこかり</span>
                     </a>
                     <p class="caption-5 text-tc-ink-2 mt-4">
-                        こちらは<a :href="LINKS.event" target="_blank" rel="noopener" class="tc-link">The CREATORS 7</a>でお会いした方向けの特設ページです。イベント本体とは関係ありません。
+                        こちらは<a :href="LINKS.event" target="_blank" rel="noopener" class="tc-link">The CREATORS 7</a>でお会いした方向けの特設ページです。株式会社トライデントワークス・株式会社MisskeyHQ・Misskey Projectの承認を得たものではなく、これら組織とは一切関係ありません。
                     </p>
                 </div>
                 <nav aria-label="フッター" class="grid grid-cols-2 gap-8">
@@ -502,7 +465,7 @@ const works = [{
     alt: 'ARフォトフレームの画面',
     kind: 'AR ・ イベント',
     title: 'ARフォトフレーム',
-    body: '素材と設定ファイルを足すだけで簡単にARフォトフレームをつくれる仕組み。大学の入学式・卒業式などで、AR立て看板としての採用実績があります。キャラクターを配置して、推しとの記念撮影など幅広く活用できます。',
+    body: '素材と設定ファイルを足すだけで簡単にARフォトフレームをつくれる仕組み。大学の入学式・卒業式などで、AR立て看板としての採用実績があります。立て看板の代わりにキャラクターを配置して、推しとの記念撮影アプリなどにも幅広く活用できます。',
 }, {
     href: '/works/milpr-ticket',
     img: '/img/works/e_milprticket.webp',
@@ -512,22 +475,6 @@ const works = [{
     body: 'VTuberプロダクション「ミリプロ」の1st ライブに合わせて共同開発した、非公式の二次創作サービス。タレントご本人にも遊んでいただきました。',
 }];
 
-const steps = [{
-    icon: 'i-ph-chat-circle-dots',
-    bg: 'bg-tc-pink-paper',
-    title: '話しかける',
-    body: 'XのDMかフォームで、活動のことや気になったことを教えてください。思いつきの一言で大丈夫です。',
-}, {
-    icon: 'i-ph-lightbulb',
-    bg: 'bg-tc-mustard',
-    title: 'アイデアを広げる',
-    body: 'やってみたいことを、技術でできること・難しいことに分けて整理します。「こんなの無理かな」も歓迎です。',
-}, {
-    icon: 'i-ph-scissors',
-    bg: 'bg-tc-sage-paper',
-    title: '小さく形にしてみる',
-    body: 'いきなり大きくつくらず、まずは試作から。手ざわりを確かめながら進めます。',
-}];
 
 const misskeySteps = [{
     title: 'サーバーを選ぶ',
@@ -546,10 +493,10 @@ const faqs = [{
     a: '技術的な知識はまったく要りません。むしろ、創作をしている側から見た「こんなのがあったらいいのに」をお聞かせいただき、新たな気づきを得られると嬉しいなと思っています。',
 }, {
     q: 'まだ具体的なアイデアがありません。',
-    a: 'それで大丈夫です。雑談やアイデアの壁打ちだけでも歓迎しています。話しているうちに形が見えてくることも多いので、気軽にどうぞ。',
+    a: '雑談やアイデアの壁打ちだけでも大歓迎。話しているうちに形が見えてくることも多いので、お気軽にどうぞ。私自身もいろんな業界の方のお話を聞いて学びたいと思っているので、ぜひいろいろお話させてください！',
 }, {
     q: 'どうやって連絡すればいいですか？',
-    a: 'XのDMか、お問い合わせフォームからどうぞ。当日は、1日目日中イベント・懇親会、2日目日中イベントに参加予定です。2日目懇親会には参加できないため、他のタイミングでお会いできればと思います。',
+    a: 'Xのチャット・The CREATORS 7 クリエイターズポータル・お問い合わせフォームのいずれかからご連絡ください。Discordやメールなど他の連絡手段をご希望の方は、上記いずれかでご連絡いただければそれ以降切り替え可能です。当日は、1日目日中イベント・懇親会、2日目日中イベントに参加予定です。2日目懇親会には参加できません…。',
 }, {
     q: 'おしながきシステムは、いつ使えますか？',
     a: '現在開発中ですが、2027年夏のコミックマーケット110に間に合うように調整中です。2027年3月ごろからベータテストを開始する予定なので、C110にサークル参加予定で気になる方はぜひお声がけください！',
@@ -558,10 +505,10 @@ const faqs = [{
     a: '「いいね」の代わりに、豊富なリアクションが用意されているのが特徴。いいねだけでは伝わらない気持ちも、リアクションで手軽に表現できます。また、タイムラインや通知はリアルタイム更新。ユーザーの生の反応をダイレクトに受け取ることができます。',
 }, ...(SHOW_INVITE_NOTICE ? [{
     q: 'Misskey.io に登録しようとしたら、招待コードが必要でした。',
-    a: '現在、Misskey.io は新規登録を制限しています。The CREATORS 7 の会場で招待コードをお渡しできるので、お気軽にお声がけください。',
+    a: 'The CREATORS 7 の会場で招待コードをお渡しできるので、お気軽にお声がけください。',
 }] : []), {
     q: 'どんな技術でつくっているのですか？',
-    a: '主にWebの技術です。Vue.js・Nuxt・Astroといった仕組みを使ったサイトやアプリのほか、Canvasでの画像生成や、ブラウザだけで動くARなどをつくってきました。アプリのインストールが要らないので、イベントやSNSで気軽に使ってもらいやすいのが強みです。',
+    a: '主にWebの技術です。Vue.js・Nuxt・Astroといった仕組みを使ったサイトやアプリのほか、Canvasでの画像生成や、ブラウザだけで動くARなどをつくってきました。このポートフォリオも、Vue.jsやVitePressといった技術で作られています。アプリとは違いブラウザでアクセスするだけで別途何かをインストールする必要がないため、イベントやSNSで気軽に使ってもらいやすいのが強みです。',
 }];
 
 const socials = [

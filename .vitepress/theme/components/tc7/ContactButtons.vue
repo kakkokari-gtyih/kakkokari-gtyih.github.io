@@ -3,7 +3,7 @@
         <a :href="LINKS.xProfile" target="_blank" rel="noopener" class="tc-btn tc-btn-primary button-md">
             <span class="tc-btn-face">
                 <span class="i-ph-x-logo text-xl" aria-hidden="true"></span>
-                XのDMで話しかける
+                XのDMで話してみる
             </span>
         </a>
         <a :href="LINKS.form" target="_blank" rel="noopener" class="tc-btn tc-btn-secondary button-md">
